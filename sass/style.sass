@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap')
+@import "./nav"
 $gold: rgb(255, 204, 59)
 $heading-font-size: clamp(20px, 3vw, 300px)
-$link-font-size: clamp(10px, 2vh, 100px)
 
 body
     background: #000
@@ -9,54 +9,6 @@ body
     margin: 0 auto
     font-size: 2vmax
     max-font-size: 10px
-
-// Header and nav bar styling
-
-header
-    display: flex
-    flex: 1 1 auto
-    justify-content: flex-end
-    align-self: center
-    position: fixed
-    padding: auto 2vw
-    width: 100vw
-    height: 5.5vh
-    text-transform: uppercase
-    // filter: blur(4px)
-
-.routes
-    margin: 0
-    padding: 0
-    display: flex
-    flex-wrap: wrap
-    list-style: none
-    li
-        padding: 0 3vw 0 0
-        a
-            align-self: center
-            cursor: pointer
-            color: #fff
-            font-weight: 400
-            text-decoration: none
-            font-size: $link-font-size
-
-.burger
-    display: none
-
-.menu
-    display: none
-
-@media (max-width: 800px)
-    .burger
-        display: flex
-
-    .routes
-        display: none
-
-nav
-    @extend header
-    filter: none
-    justify-content: center
 
 // main content styling
 
