@@ -1,0 +1,25 @@
+{
+    "name": "webdesign",
+    "version": "1.0.0",
+    "description": "repository for webpage project",
+    "main": "gulpfile.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ManiacMaxo/WebDesign.git"
+    },
+    "keywords": [
+        "Gulp",
+        "SASS"
+    ],
+    "author": "Victor Gorchilov",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ManiacMaxo/WebDesign/issues"
+    },
+    "homepage": "https://github.com/ManiacMaxo/WebDesign#readme",
+    "devDependencies": {
+        "browser-sync": "^2.26.7",
+        "gulp": "^4.0.2",
+        "gulp-sass": "^4.1.0"
+    }
+}
