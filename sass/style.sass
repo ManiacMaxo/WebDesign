@@ -1,10 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap')
+$gold: rgb(255, 204, 59)
+$heading-font-size: clamp(20px, 3vw, 300px)
+$link-font-size: clamp(10px, 2vh, 100px)
 
 body
-    background: #fafafa
+    background: #000
     font-family: "Lato", sans-serif
     margin: 0 auto
     font-size: 2vmax
+    max-font-size: 10px
 
 // Header and nav bar styling
 
@@ -14,36 +18,45 @@ header
     justify-content: flex-end
     align-self: center
     position: fixed
-    background: #222
     padding: auto 2vw
     width: 100vw
     height: 5.5vh
+    text-transform: uppercase
     // filter: blur(4px)
-    a
-        align-self: center
-        cursor: pointer
+
+.routes
+    margin: 0
+    padding: 0
+    display: flex
+    flex-wrap: wrap
+    list-style: none
+    li
+        padding: 0 3vw 0 0
+        a
+            align-self: center
+            cursor: pointer
+            color: #fff
+            font-weight: 400
+            text-decoration: none
+            font-size: $link-font-size
+
+.burger
+    display: none
+
+.menu
+    display: none
+
+@media (max-width: 800px)
+    .burger
+        display: flex
+
+    .routes
+        display: none
 
 nav
     @extend header
     filter: none
-    ul
-        margin: 0
-        padding: 0
-        display: flex
-        flex-wrap: wrap
-        list-style: none
-    li
-        padding: 0 3vw 0 0
-    a
-        color: #fff
-        font-weight: 400
-        text-decoration: none
-
-.right-nav
-    justify-content: flex-end
-
-.left-nav
-    justify-content: flex-start
+    justify-content: center
 
 // main content styling
 
@@ -56,38 +69,16 @@ nav
     color: #111
     text-align: center
     h1
-        font-size: 7vmax
+        font-size: $heading-font-size
         font-weight: bold
-        color: #f5b041
-    a, span
-        font-size: 2em
-        font-weight: bold
-        color: #f5b041
-        text-decoration: none
+        color: $gold
+        text-transform: uppercase
+    // a, span
+    //     font-size: 2em
+    //     font-weight: bold
+    //     color: $gold
+    //     text-decoration: none
 
 .page-content a:hover
     cursor: pointer
     text-decoration: underline
-
-// Universal buttons
-
-button
-    // text
-    font-size: 2vmax
-    line-height: 1.17648
-    letter-spacing: -0.022em
-    color: #fff
-    text-align: center
-    cursor: pointer
-    padding: 18px 31px
-    // container
-    background-color: #0071e3
-    border: 0
-    border-radius: 12px
-    white-space: nowrap
-    min-width: 100px
-    width: fit-content
-    max-width: 300px
-    margin-bottom: 20px
-    &:hover, &:focus
-        background-color: #0077ed

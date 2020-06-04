@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 body {
-  background: #fafafa;
+  background: #000;
   font-family: "Lato", sans-serif;
   margin: 0 auto;
-  font-size: 2vmax; }
+  font-size: 2vmax;
+  max-font-size: 10px; }
 
 header, nav {
   display: flex;
@@ -11,34 +12,42 @@ header, nav {
   justify-content: flex-end;
   align-self: center;
   position: fixed;
-  background: #222;
   padding: auto 2vw;
   width: 100vw;
-  height: 5.5vh; }
-  header a, nav a {
-    align-self: center;
-    cursor: pointer; }
+  height: 5.5vh;
+  text-transform: uppercase; }
+
+.routes {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none; }
+  .routes li {
+    padding: 0 3vw 0 0; }
+    .routes li a {
+      align-self: center;
+      cursor: pointer;
+      color: #fff;
+      font-weight: 400;
+      text-decoration: none;
+      font-size: clamp(10px, 2vh, 100px); }
+
+.burger {
+  display: none; }
+
+.menu {
+  display: none; }
+
+@media (max-width: 800px) {
+  .burger {
+    display: flex; }
+  .routes {
+    display: none; } }
 
 nav {
-  filter: none; }
-  nav ul {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none; }
-  nav li {
-    padding: 0 3vw 0 0; }
-  nav a {
-    color: #fff;
-    font-weight: 400;
-    text-decoration: none; }
-
-.right-nav {
-  justify-content: flex-end; }
-
-.left-nav {
-  justify-content: flex-start; }
+  filter: none;
+  justify-content: center; }
 
 .page-content {
   position: fixed;
@@ -49,34 +58,11 @@ nav {
   color: #111;
   text-align: center; }
   .page-content h1 {
-    font-size: 7vmax;
+    font-size: clamp(20px, 3vw, 300px);
     font-weight: bold;
-    color: #f5b041; }
-  .page-content a, .page-content span {
-    font-size: 2em;
-    font-weight: bold;
-    color: #f5b041;
-    text-decoration: none; }
+    color: #ffcc3b;
+    text-transform: uppercase; }
 
 .page-content a:hover {
   cursor: pointer;
   text-decoration: underline; }
-
-button {
-  font-size: 2vmax;
-  line-height: 1.17648;
-  letter-spacing: -0.022em;
-  color: #fff;
-  text-align: center;
-  cursor: pointer;
-  padding: 18px 31px;
-  background-color: #0071e3;
-  border: 0;
-  border-radius: 12px;
-  white-space: nowrap;
-  min-width: 100px;
-  width: fit-content;
-  max-width: 300px;
-  margin-bottom: 20px; }
-  button:hover, button:focus {
-    background-color: #0077ed; }
