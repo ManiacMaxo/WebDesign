@@ -5,6 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>BAGUN | ESPORTS ORGANIZATION</title>
         <link rel="stylesheet" href="css/style.css" />
+        <link
+            rel="stylesheet"
+            href="node_modules/@fortawesome/fontawesome-free/css/all.css"
+        />
         <script src="js/index.js" defer type="module"></script>
         <link rel="icon" href="assets/favicon.ico" />
     </head>
@@ -13,13 +17,13 @@
             <div class="nav-logo">
                 <img src="assets/cat.svg" alt="Bagun" />
             </div>
-            <ul class="routes">
-                <li><a href="/">Home</a></li>
-                <li><a href="/News">News</a></li>
-                <li><a href="/Players">Players</a></li>
-                <li><a>Divisions</a></li>
-                <li><a href="/About">About</a></li>
-            </ul>
+            <div class="routes">
+                <a href="/">Home</a>
+                <a href="/News">News</a>
+                <a href="/Players">Players</a>
+                <a>Divisions</a>
+                <a href="/About">About</a>
+            </div>
             <div class="header-burger">
                 <button class="burger">
                     <div class="burger-box">
@@ -38,7 +42,40 @@
             </div>
         </header>
         <div class="page-content">
-            <h1>Hello World!</h1>
+            <div class="vertical-chain">
+                <section class="section">
+                    <div class="section-background">
+                        <img src="/assets/siege.jpg" />
+                    </div>
+                    <div class="content-wrapper">
+                        <div class="conent">
+                            <a href="/divisions/rainbow-six-siege.html">
+                                Rainbow Six Team
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <section class="section">
+                    <div class="section-background">
+                        <img src="/assets/destiny.jpg" />
+                    </div>
+                    <div class="content-wrapper">
+                        <div class="conent">
+                            <a href="/divisions/destiny.html">
+                                Destiny Team
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
+        <footer>
+            <a href="https://github.com/ManiacMaxo/WebDesign">GitHub</a>
+            <a
+                class="fab fa-instagram"
+                href="https://www.instagram.com/victorgorchilov/"
+                >Instagram</a
+            >
+        </footer>
     </body>
 </html>

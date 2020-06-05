@@ -3,41 +3,38 @@ $route-font-size: clamp(10px, 2vh, 100px)
 
 header
     display: flex
+    flex-wrap: wrap
+    flex-direction: row
     flex: 1 1 auto
     justify-content: center
     align-self: center
     position: fixed
-    padding: auto 2vw
     width: 100vw
-    height: 5.5vh
+    height: 5vh
     text-transform: uppercase
-
+    background-color: rgba(0,0,0, 0.9)
+    z-index: 3
 
 .nav-logo
-    justify-content: flex-start
-    display: block
+    align-self: flex-start
 
 .routes
-    margin: 0
-    padding: 0
     display: flex
-    flex-wrap: wrap
+    justify-content: space-between
+    align-self: center
     list-style: none
-    li
-        padding: 0 3vw 0 0
-        a
-            align-self: center
-            cursor: pointer
-            color: #fff
-            font-weight: 400
-            text-decoration: none
-            font-size: $route-font-size
-
+    width: 60vw
+    a
+        align-self: center
+        cursor: pointer
+        color: #fff
+        font-weight: 400
+        text-decoration: none
+        font-size: $route-font-size
 
 .header-burger
     display: none
-    align-items: center
-    justify-content: center
+    align-self: flex-end
 
 .burger
     position: relative
@@ -90,7 +87,10 @@ header
         transform: translatex(3.3px) rotate(135deg)
         width: 26.4px
 
-@media (max-width: 800px)
+.menu
+    display: none
+
+@media (max-width: 900px)
     .header-burger
         display: flex
 
