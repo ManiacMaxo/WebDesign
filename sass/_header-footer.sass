@@ -1,5 +1,8 @@
 $route-font-size: clamp(10px, 2vh, 100px)
 $white: rgb(250, 250, 250)
+$black: rgb(0, 0, 0)
+
+// header
 
 .nav
     display: flex
@@ -30,7 +33,16 @@ $white: rgb(250, 250, 250)
         display: none
 
 .burger-menu
-    display: none
+    position: absolute
+    height: 100vh
+    width: 100vw
+    display: flex
+    flex-direction: column
+    background-color: $black
+    align-content: center
+    align-self: center
+    &-wrapper
+        display: none
 
 @media (max-width: 900px)
     .nav
@@ -40,7 +52,24 @@ $white: rgb(250, 250, 250)
             display: none
         &-burger
             display: block
-            margin: 0 2vw
+            // margin: 0 2vw
+        .link
+            display: none
 
-    header .link
-        display: none
+// Footer
+
+.footer
+    margin: 5vh 0
+    display: flex
+    background-color: $black
+    height: 15vh
+    color: $gold
+    font-size: 1rem
+    margin: 1rem
+    flex-flow: column wrap
+    align-items: center
+
+@media (max-width: 500px)
+    .footer
+        flex-flow: column nowrap
+        height: 20vh

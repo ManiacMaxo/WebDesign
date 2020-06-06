@@ -1,8 +1,11 @@
-const buger = document.querySelector(".burger")
-const menuWrapper = document.querySelector(".menu-wrapper")
-const menu = document.querySelector(".menu")
+const burger = document.querySelector(".burger")
+const menu = document.querySelector(".burger-menu-wrapper")
 
 burger.addEventListener("click", () => {
-    menuWrapper.display = "block"
-    menu.display = "flex"
+    if (menu.display === "none") {
+        menu.display = "block"
+    } else {
+        menu.display = "none"
+    }
+    console.log("clicked menu button")
 })

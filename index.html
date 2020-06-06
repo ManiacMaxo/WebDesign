@@ -6,6 +6,7 @@
         <title>BAGUN | ESPORTS ORGANIZATION</title>
         <link rel="stylesheet" href="css/style.css" />
         <script src="js/index.js" defer type="module"></script>
+        <link rel="shortcut icon" href="assets/favicon.ico" />
         <link rel="icon" href="assets/favicon.ico" />
     </head>
     <body>
@@ -14,84 +15,82 @@
                 <img src="assets/cat.svg" alt="Bagun" />
             </div>
             <div class="nav-routes">
-                <a href="/">Home</a>
-                <a href="/News">News</a>
-                <a href="/Players">Players</a>
+                <a href="index.html">Home</a>
+                <a href="news/news.html">News</a>
+                <a href="players/players.html">Players</a>
                 <a>Divisions</a>
-                <a href="/About">About</a>
+                <a href="about.html">About</a>
             </div>
-            <div class="nav-right">
+            <div class="nav-end">
                 <div class="link">
-                    <a href="/shop.html"> Shop</a>
+                    <a href="shop.html"> Shop</a>
                 </div>
                 <div class="nav-burger">
                     <button class="burger">
-                        <i class="fa fa-chevron-down"></i>
+                        <span>Burger</span>
                     </button>
-                    <div class="burger-menu">
-                        <ul>
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/News">News</a></li>
-                            <li><a href="/Players">Players</a></li>
-                            <li><a>Divisions</a></li>
-                            <li><a href="/About">About</a></li>
-                        </ul>
+                    <div class="burger-menu-wrapper">
+                        <div class="burger-menu">
+                            <a href="#index.html">Home</a>
+                            <a href="news/news.html">News</a>
+                            <a href="players/players.html">Players</a>
+                            <a>Divisions</a>
+                            <a href="about.html">About</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </header>
-        <div class="page-content">
-            <div class="vertical-chain">
-                <section class="section">
-                    <div class="section-background">
-                        <img src="/assets/siege.jpg" />
+        <div class="page-content vertical-chain">
+            <section class="section--image">
+                <div class="section-background">
+                    <img src="assets/siege.jpg" />
+                </div>
+                <div class="content-wrapper">
+                    <div class="content">
+                        <h1>
+                            <a href="divisions/rainbow-six-siege.html">
+                                Rainbow Six Team
+                            </a>
+                        </h1>
                     </div>
-                    <div class="content-wrapper">
-                        <div class="conent">
-                            <h1>
-                                <a href="/divisions/rainbow-six-siege.html">
-                                    Rainbow Six Team
-                                </a>
-                            </h1>
-                        </div>
+                </div>
+            </section>
+            <section class="section--text">
+                <div class="content-wrapper">
+                    <div class="content">
+                        <h1>What is Bagun?</h1>
+                        <p>
+                            an esports organization made by a couple of friends
+                            that aren't the best but strive to be
+                        </p>
+                        <a class="link" href="">See more here</a>
                     </div>
-                </section>
-                <section class="section--white">
-                    <div class="content-wrapper">
-                        <div class="content">
-                            <h1>Title</h1>
-                            <a class="link" href="">See more here</a>
-                        </div>
+                </div>
+            </section>
+            <section class="section--image">
+                <div class="section-background">
+                    <img src="assets/destiny.jpg" />
+                </div>
+                <div class="content-wrapper">
+                    <div class="content">
+                        <h1>
+                            <a href="divisions/destiny.html">
+                                Destiny Team
+                            </a>
+                        </h1>
                     </div>
-                </section>
-                <section class="section">
-                    <div class="section-background">
-                        <img src="/assets/destiny.jpg" />
-                    </div>
-                    <div class="content-wrapper">
-                        <div class="content">
-                            <h1>
-                                <a href="/divisions/destiny.html">
-                                    Destiny Team
-                                </a>
-                            </h1>
-                        </div>
-                    </div>
-                </section>
-            </div>
+                </div>
+            </section>
         </div>
         <footer class="footer">
-            <div class="footer-left">
-                <a href="https://github.com/ManiacMaxo/WebDesign">GitHub</a>
-                <a href="https://instagram.com/victorgorchilov">Instagram</a>
-                <a href="/About">About</a>
-                <a href="">Shop</a>
-            </div>
-            <div class="footer-right">
-                <a href="">Contact Creator</a>
-                <a href="">Terms</a>
-                <span>BAGUN | All rights reserved</span>
-            </div>
+            <a href="https://github.com/ManiacMaxo/WebDesign">GitHub</a>
+            <a href="https://instagram.com/victorgorchilov">Instagram</a>
+            <a href="about.html">About</a>
+            <a href="shop.html">Shop</a>
+            <a href="">Contact Creator</a>
+            <a href="terms-of-service.html">Terms</a>
+            <span>BAGUN | All rights reserved</span>
         </footer>
     </body>
 </html>

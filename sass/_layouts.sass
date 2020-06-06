@@ -1,0 +1,67 @@
+$white: rgb(250, 250, 250)
+$black: rgb(0, 0, 0)
+$gold: rgb(255, 204, 59)
+$heading-font-size: clamp(20px, 3vw, 300px)
+
+body
+    background: $black
+    color: $white
+    font-family: "Poppins", sans-serif
+    margin: 0
+    // overflow-x: hidden
+
+a
+    text-decoration: none
+    color: inherit
+
+.page-content // body
+    margin: 0
+    width: 100vw
+    color: #111
+
+.link // button link
+    border: 2px solid
+    background-color: transparent
+    font-size: 2vh
+    padding: 0.2rem 0.5rem
+    &:hover
+        background-color: $white
+        color: $black
+
+.vertical-chain
+    display: flex column
+    width: 100vw
+    .section
+        display: flex
+        align-items: center
+        height: 100vh
+        h1
+            font-size: 5vmax
+    .section--image
+        @extend .section
+        justify-content: center
+        h1 a
+            display: block
+            color: $white
+            align-self: center
+            transition: .2s
+            &:hover
+                transform: scale(1.3)
+        .section-background
+            position: absolute
+            overflow: hidden
+            height: 100%
+            width: 100vw
+            img
+                height: 100vh
+                filter: blur(10px)
+    .section--text
+        @extend .section
+        background-color: white
+        height: 70vh
+        .content-wrapper
+            padding: 0 10vw
+    .content-wrapper
+        z-index: 2
+        .content
+            flex-direction: column
