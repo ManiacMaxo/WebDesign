@@ -1,9 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 body {
+  padding-top: 8vh;
   background: black;
   color: #fafafa;
   font-family: "Poppins", sans-serif;
-  margin: 0; }
+  margin: 0;
+  overflow-x: hidden; }
 
 a {
   text-decoration: none;
@@ -11,20 +13,20 @@ a {
 
 .page-content {
   margin: 0;
-  width: 100vw;
-  color: #111; }
+  color: #fafafa; }
 
 .link {
   border: 2px solid;
-  background-color: transparent;
+  background: transparent;
   font-size: 2vh;
   padding: 0.2rem 0.5rem; }
   .link:hover {
-    background-color: #fafafa;
+    background: #fafafa;
     color: black; }
 
 .vertical-chain {
-  display: flex column;
+  display: flex;
+  flex-direction: column;
   width: 100vw; }
   .vertical-chain .section, .vertical-chain .section--image, .vertical-chain .section--text {
     display: flex;
@@ -50,8 +52,13 @@ a {
         height: 100vh;
         filter: blur(10px); }
   .vertical-chain .section--text {
-    background-color: white;
-    height: 70vh; }
+    background: white;
+    height: 70vh;
+    color: black;
+    font-size: 1.5rem; }
+    .vertical-chain .section--text a:hover {
+      background: black;
+      color: #fafafa; }
     .vertical-chain .section--text .content-wrapper {
       padding: 0 10vw; }
   .vertical-chain .content-wrapper {
@@ -59,7 +66,15 @@ a {
     .vertical-chain .content-wrapper .content {
       flex-direction: column; }
 
+.big-text {
+  color: #fafafa;
+  border: 2px solid #fafafa;
+  width: 70vw;
+  margin: 3vh auto;
+  padding: 3%; }
+
 .nav {
+  top: 0;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -67,7 +82,7 @@ a {
   width: 100vw;
   height: 8vh;
   text-transform: uppercase;
-  background-color: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.9);
   z-index: 3; }
   .nav-logo {
     height: 8vh; }
@@ -93,7 +108,7 @@ a {
   width: 100vw;
   display: flex;
   flex-direction: column;
-  background-color: black;
+  background: black;
   align-content: center;
   align-self: center; }
   .burger-menu-wrapper {
@@ -113,7 +128,7 @@ a {
 .footer {
   margin: 5vh 0;
   display: flex;
-  background-color: black;
+  background: black;
   height: 15vh;
   color: #ffcc3b;
   font-size: 1rem;

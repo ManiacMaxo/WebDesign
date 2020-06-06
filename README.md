@@ -2,6 +2,8 @@
 
 repository for the webpage of Bagun Esports
 
+![main page](assets/main-page.png?raw=True "Main Page")
+
 ## Requirements
 
 -   Must style at least 5 different layouts for the site

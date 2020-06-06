@@ -4,11 +4,12 @@ $gold: rgb(255, 204, 59)
 $heading-font-size: clamp(20px, 3vw, 300px)
 
 body
+    padding-top: 8vh
     background: $black
     color: $white
     font-family: "Poppins", sans-serif
     margin: 0
-    // overflow-x: hidden
+    overflow-x: hidden
 
 a
     text-decoration: none
@@ -16,20 +17,20 @@ a
 
 .page-content // body
     margin: 0
-    width: 100vw
-    color: #111
+    color: $white
 
-.link // button link
+.link // link like button
     border: 2px solid
-    background-color: transparent
+    background: transparent
     font-size: 2vh
     padding: 0.2rem 0.5rem
     &:hover
-        background-color: $white
+        background: $white
         color: $black
 
 .vertical-chain
-    display: flex column
+    display: flex
+    flex-direction: column
     width: 100vw
     .section
         display: flex
@@ -57,11 +58,23 @@ a
                 filter: blur(10px)
     .section--text
         @extend .section
-        background-color: white
+        background: white
         height: 70vh
+        color: $black
+        font-size: 1.5rem
+        a:hover
+            background: $black
+            color: $white
         .content-wrapper
             padding: 0 10vw
     .content-wrapper
         z-index: 2
         .content
             flex-direction: column
+
+.big-text
+    color: $white
+    border: 2px solid $white
+    width: 70vw
+    margin: 3vh auto
+    padding: 3%
