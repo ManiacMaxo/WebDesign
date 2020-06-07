@@ -71,7 +71,16 @@ a {
   border: 2px solid #fafafa;
   width: 70vw;
   margin: 3vh auto;
-  padding: 3%; }
+  padding: 2rem; }
+
+.cards-news {
+  display: flex;
+  flex-direction: column; }
+  .cards-news section {
+    border: 2px solid #fafafa;
+    width: 70vw;
+    margin: 2vh auto;
+    padding: 1rem; }
 
 .nav {
   top: 0;
@@ -126,7 +135,7 @@ a {
       display: none; } }
 
 .footer {
-  margin: 5vh 0;
+  margin-bottom: 5vh;
   display: flex;
   background: black;
   height: 15vh;
