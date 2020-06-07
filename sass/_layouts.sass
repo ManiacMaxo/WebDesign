@@ -9,6 +9,7 @@ body
     margin: 0
     overflow-x: hidden
     font-size: 1rem
+    min-height: 100vh
 
 a
     text-decoration: none
@@ -24,13 +25,13 @@ a
         padding: 0 5vw
         margin-bottom: 3vh
         h1
-            justify-self: 
+            justify-self:
             color: $gold
             font-size: 5rem
             margin: 0
 
 .link // link like button
-    border: 2px solid
+    border: 2px solid $white
     background: transparent
     font-size: 0.75rem
     padding: 0.2rem 0.5rem
@@ -38,6 +39,15 @@ a
     &:hover
         background: $white
         color: $black
+    &--black
+        @extend .link
+        font-size: 1rem
+        color: $black
+        border-color: $black
+        &:hover
+            border-color: $black
+            color: $white
+            background: $black
 
 .vertical-chain
     display: flex
@@ -73,9 +83,6 @@ a
         height: 70vh
         color: $black
         font-size: 1.5rem
-        a:hover
-            background: $black
-            color: $white
         .content-wrapper
             padding: 0 10vw
     .content-wrapper
@@ -94,10 +101,11 @@ a
     flex-direction: column
     section
         border: 2px solid $white
-        background: 
+        background:
         width: 70vw
         margin: 2vh auto
         padding: 1rem
+        bor
 
 .player-cards
     display: flex
@@ -132,3 +140,15 @@ a
 @media (max-width: 700px)
     .player-cards section
         width: 30vw
+
+.form
+    display: flex
+    flex-direction: column
+    justify-content: center
+    &-left
+
+    &-right
+    input
+        align-self: center
+        width: 80%
+        &::before
