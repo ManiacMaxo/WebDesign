@@ -22,7 +22,7 @@
                     <a href="/">Home</a>
                     <a href="news/news.html">News</a>
                     <a href="join-bagun.html">Join BAGUN</a>
-                    <a>Divisions</a>
+                    <a class="nav-folder">Divisions</a>
                     <a href="about.html">About</a>
                 </div>
                 <div class="nav-end">
@@ -39,7 +39,7 @@
                                 <a href="/">Home</a>
                                 <a href="news/news.html">News</a>
                                 <a href="join-bagun.html">Join BAGUN</a>
-                                <a>Divisions</a>
+                                <a class="burger-menu-folder">Divisions</a>
                                 <a href="about.html">About</a>
                             </div>
                         </div>
@@ -48,17 +48,34 @@
             </header>
         </div>
         <div class="page-content">
-            <div class="form">
+            <header>
                 <h1>Joining Bagun</h1>
-                <span>Name*</span>
+            </header>
+            <div class="form">
+                <label for="fname">First name *</label>
+                <input type="text" x-autocompletetype="name" required />
+
+                <label for="lname">Last Name *</label>
+                <input type="text" x-autocompletetype="surname" required />
+
+                <label for="email">Email *</label>
+                <input
+                    type="email"
+                    autocomplete="email"
+                    spellcheck="false"
+                    required
+                />
+
+                <label for="">Twitter</label>
                 <input type="text" />
-                <span>Email*</span>
-                <input type="text" />
-                <span>Youtube*</span>
-                <input type="text" />
-                <span>Age*</span>
-                <input type="text" />
-                <a href="" class="link">Send</a>
+
+                <label for="">Youtube *</label>
+                <input type="text" required />
+
+                <label for="">Age *</label>
+                <input type="number" required />
+
+                <input type="submit" />
             </div>
         </div>
         <footer class="footer">
