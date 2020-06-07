@@ -9,7 +9,6 @@ body
     margin: 0
     overflow-x: hidden
     font-size: 1rem
-    min-height: 100vh
 
 a
     text-decoration: none
@@ -109,13 +108,14 @@ a
 
 .player-cards
     display: flex
-    justify-content: space-evenly
+    flex-wrap: wrap
+    justify-content: space-between
     section
         background-size: 100% 100%
         border-radius: 10px
         display: flex
         flex-flow: row wrap
-        width: 20vw
+        width: 100px
         height: 300px
         .content-wrapper
             display: none
@@ -137,12 +137,12 @@ a
                 display: block
                 background: rgba(0,0,0,0.7)
 
-@media (max-width: 700px)
-    .player-cards section
-        width: 30vw
+// @media (max-width: 700px)
+//     .player-cards section
+//         width: 30vw
 
 .form
-    display: flex
+    display: grid
     flex-direction: column
     justify-content: center
     &-left
