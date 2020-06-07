@@ -2,10 +2,10 @@ const burger = document.querySelector(".burger")
 const menu = document.querySelector(".burger-menu-wrapper")
 
 burger.addEventListener("click", () => {
-    if (menu.display === "none") {
-        menu.display = "block"
+    if (menu.style.transform == "translate(-100vw)") {
+        menu.style.transform = "translate(0)"
     } else {
-        menu.display = "none"
+        menu.style.transform = "translate(-100vw)"
     }
     console.log("clicked menu button")
 })
