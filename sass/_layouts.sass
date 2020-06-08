@@ -25,7 +25,7 @@ a
         padding: 0 5vw
         margin-bottom: 3vh
         h1
-            justify-self: 
+            justify-self:
             color: $gold
             font-size: 5rem
             margin: 0
@@ -58,6 +58,7 @@ a
         align-items: center
         height: 100vh
         h1
+            margin: 0
             font-size: 5vmax
     .section--image
         @extend .section
@@ -77,6 +78,8 @@ a
             img
                 height: 100vh
                 filter: blur(10px)
+        .content-wrapper
+            align-items: center
     .section--text
         @extend .section
         background: white
@@ -86,9 +89,16 @@ a
         .content-wrapper
             padding: 0 10vw
     .content-wrapper
+        display: flex
+        flex-direction: column
+        justify-content: center
+        width: 100%
+        height: 100%
         z-index: 2
+        padding: 0 2rem
         .content
             flex-direction: column
+            width: fit-content
 
 .big-text
     border: 2px solid $white
@@ -153,7 +163,6 @@ a
                 opacity: 1
             .section-background img
                 filter: blur(5px)
-
 
 .form
     display: flex
