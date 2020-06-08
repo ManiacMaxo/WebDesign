@@ -50,6 +50,14 @@ $gold: rgb(255, 204, 59)
                 left: 55vw
     &-burger
         display: none
+    .btn
+        background: none
+        border: none
+        color: $white
+        font-size: 2rem
+        cursor: pointer
+        &:hover
+            color: rgb(156, 156, 156)
 
 .burger-menu-wrapper
     height: 100vh
@@ -69,15 +77,18 @@ $gold: rgb(255, 204, 59)
         align-content: center
         align-self: center
         font-size: 4rem
-    .menu-close-btn
-        position: absolute
-        top: 10vh
-        right: 15vw
 
+    .menu-close-btn
+        font-size: 4rem
+        position: absolute
+        top: 8vh
+        right: 12vw
+        &:after
+            display: inline-block
+            content: "\00d7"
 
 @media (max-width: 900px)
     .nav
-        height: 3rem
         padding: 0 2rem
         justify-content: space-between
         &-routes

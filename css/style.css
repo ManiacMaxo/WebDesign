@@ -207,6 +207,14 @@ a {
         left: 55vw; }
   .nav-burger {
     display: none; }
+  .nav .btn {
+    background: none;
+    border: none;
+    color: #fafafa;
+    font-size: 2rem;
+    cursor: pointer; }
+    .nav .btn:hover {
+      color: #9c9c9c; }
 
 .burger-menu-wrapper {
   height: 100vh;
@@ -227,13 +235,16 @@ a {
     align-self: center;
     font-size: 4rem; }
   .burger-menu-wrapper .menu-close-btn {
+    font-size: 4rem;
     position: absolute;
-    top: 10vh;
-    right: 15vw; }
+    top: 8vh;
+    right: 12vw; }
+    .burger-menu-wrapper .menu-close-btn:after {
+      display: inline-block;
+      content: "\00d7"; }
 
 @media (max-width: 900px) {
   .nav {
-    height: 3rem;
     padding: 0 2rem;
     justify-content: space-between; }
     .nav-routes {
