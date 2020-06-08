@@ -272,4 +272,5 @@ a {
 @media (max-width: 500px) {
   .footer {
     flex-flow: column nowrap;
-    height: 20vh; } }
+    height: 20vh;
+    margin: 1rem 0 3rem; } }
