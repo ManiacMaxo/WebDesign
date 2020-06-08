@@ -76,7 +76,7 @@ $gold: rgb(255, 204, 59)
         flex-direction: column
         align-content: center
         align-self: center
-        font-size: 4rem
+        font-size: 8vw
 
     .menu-close-btn
         font-size: 4rem
@@ -95,9 +95,12 @@ $gold: rgb(255, 204, 59)
             display: none
         &-burger
             display: block
-            // margin: 0 2vw
         .link
             display: none
+
+@media (max-width: 400px)
+    .burger-menu-wrapper .menu-close-btn
+        right: 8vw
 
 // Footer
 

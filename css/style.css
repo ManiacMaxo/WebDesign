@@ -233,7 +233,7 @@ a {
     flex-direction: column;
     align-content: center;
     align-self: center;
-    font-size: 4rem; }
+    font-size: 8vw; }
   .burger-menu-wrapper .menu-close-btn {
     font-size: 4rem;
     position: absolute;
@@ -253,6 +253,10 @@ a {
       display: block; }
     .nav .link, .nav .link--black {
       display: none; } }
+
+@media (max-width: 400px) {
+  .burger-menu-wrapper .menu-close-btn {
+    right: 8vw; } }
 
 .footer {
   display: flex;
