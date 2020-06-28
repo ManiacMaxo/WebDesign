@@ -23,8 +23,9 @@ a
 
 main // body
     margin-top: 4rem
+    padding: 0 10%
     color: $white
-    min-height: 75vh // sticky footer
+    min-height: calc(75vh - 1rem) // sticky footer - margin
 
 .link // button-like link
     border: 2px solid $white
@@ -35,12 +36,3 @@ main // body
     &:hover
         background: $white
         color: $black
-    &--black
-        @extend .link
-        font-size: 1rem
-        color: $black
-        border-color: $black
-        &:hover
-            border-color: $black
-            color: $white
-            background: $black

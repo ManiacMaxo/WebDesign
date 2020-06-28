@@ -26,30 +26,21 @@ a {
 
 main {
   margin-top: 4rem;
+  padding: 0 10%;
   color: #fafafa;
-  min-height: 75vh;
+  min-height: calc(75vh - 1rem);
 }
 
-.link, .link--black {
+.link {
   border: 2px solid #fafafa;
   background: transparent;
   font-size: 0.75rem;
   padding: 0.2rem 0.5rem;
   transition: 0.3s;
 }
-.link:hover, .link--black:hover {
+.link:hover {
   background: #fafafa;
   color: black;
-}
-.link--black {
-  font-size: 1rem;
-  color: black;
-  border-color: black;
-}
-.link--black:hover {
-  border-color: black;
-  color: #fafafa;
-  background: black;
 }
 
 /*# sourceMappingURL=style.css.map */

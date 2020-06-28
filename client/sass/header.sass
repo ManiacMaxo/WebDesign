@@ -25,8 +25,7 @@
         grid-column: 2
         width: 2rem
         height: 70%
-        justify-self: center
-        align-items: center
+        justify-self: left
     .header-routes
         width: 100%
         grid-column: 3
@@ -45,7 +44,7 @@
                 display: none
     .header-end
         grid-column: 4
-        justify-self: center
+        justify-self: end
     .btn
         background: transparent
         border: none
@@ -53,8 +52,35 @@
         font-size: 2rem
     .burger
         display: none
+        align-items: center
+        justify-content: center
+        flex-direction: column
+        cursor: pointer
+        transition: box-shadow 0.6s cubic-bezier(.79,.21,.06,.81)
+        span
+            background-color: $white
+            width: 2.5rem
+            height: 4px
+            border-radius: 4px
+            margin: 3px 0px 3px 0px
+            transition: margin 0.4s cubic-bezier(.79,.21,.06,.81),transform 0.4s cubic-bezier(.79,.21,.06,.81)
 
-.hide
+        span:nth-child(2)
+            transform-origin: 50% 50%
+    .active
+        height: 2.5rem
+        span
+            margin: -2px
+        span:nth-child(1)
+            transform: rotate(-45deg)
+
+        span:nth-child(2)
+            transform: scale(0)
+
+        span:nth-child(3)
+            transform: rotate(45deg)
+
+.hidden
     transform: translateX(100vw)
 
 .burger-menu-wrapper
@@ -82,7 +108,7 @@
         height: 6rem
         grid-template-columns: 5% 10% auto 10% 5%
         .burger
-            display: block
+            display: flex
         .link, .header-routes
             display: none
         .logo

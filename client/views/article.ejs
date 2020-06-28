@@ -6,11 +6,13 @@
     </head>
     <body>
         <%- include('static/header') %>
-        <main class="big-text">
-            <h1><%= title %></h1>
-            <% content.forEach(paragraph => { %>
-            <p><%= paragraph %></p>
-            <% }) %>
+        <main>
+            <div class="big-text">
+                <h1><%= title %></h1>
+                <% content.forEach(paragraph => { %>
+                <p><%= paragraph %></p>
+                <% }) %>
+            </div>
         </main>
         <%- include('static/footer') %>
     </body>

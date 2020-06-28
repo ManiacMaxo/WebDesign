@@ -1,20 +1,22 @@
 @import ../const
 
+main
+    padding: 0
+
 .chain
     display: flex
     flex-direction: column
-    width: 100vw
+    width: 100%
     article
+        display: grid
+        grid-template-columns: 10% auto 10%
         height: 100vh
-        width: 100%
         background-color: $black
-        display: flex
-        flex-direction: column
-        justify-content: center
-        align-items: center
         background-position: center center
         background-repeat: no-repeat
         background-size: cover
+        *
+            grid-column: 2
         header
             margin: 0 auto
             align-self: center
@@ -27,5 +29,7 @@
                     transform: scale(1.3)
     .small
         height: 60vh
-        header h1:hover
-            transform: none
+        header
+            margin: 0
+            h1:hover
+                transform: none

@@ -1,7 +1,7 @@
 .big-text {
   border: 2px solid #fafafa;
-  width: 70vw;
-  margin: 4rem auto 0;
+  width: 100%;
+  margin: 0;
   padding: 2rem;
 }
 .big-text a {

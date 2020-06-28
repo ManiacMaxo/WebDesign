@@ -1,19 +1,23 @@
+main {
+  padding: 0;
+}
+
 .chain {
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  width: 100%;
 }
 .chain article {
+  display: grid;
+  grid-template-columns: 10% auto 10%;
   height: 100vh;
-  width: 100%;
   background-color: black;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.chain article * {
+  grid-column: 2;
 }
 .chain article header {
   margin: 0 auto;
@@ -30,6 +34,9 @@
 }
 .chain .small {
   height: 60vh;
+}
+.chain .small header {
+  margin: 0;
 }
 .chain .small header h1:hover {
   transform: none;
