@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('static/head') %>
+        <link rel="stylesheet" href="/css/layouts/text.css" />
+    </head>
+    <body>
+        <%- include('static/header') %>
+        <main class="big-text">
+            <h1><%= title %></h1>
+            <% content.forEach(paragraph => { %>
+            <p><%= paragraph %></p>
+            <% }) %>
+        </main>
+        <%- include('static/footer') %>
+    </body>
+</html>

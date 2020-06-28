@@ -2,56 +2,36 @@
 <html lang="en">
     <head>
         <%- include('static/head') %>
-        <link rel="stylesheet" href="/css/layouts/verticalchain.css" />
+        <link rel="stylesheet" href="/css/layouts/chain.css" />
     </head>
     <body>
         <%- include('static/header') %>
-        <div class="page-content">
-            <div class="vertical-chain">
-                <section class="section--image">
-                    <div class="section-background">
-                        <img src="assets/siege.jpg" />
+        <main>
+            <div class="chain">
+                <article style="background-image: url(assets/siege.jpg);">
+                    <header>
+                        <h1><a href="divisions/r6">Rainbow Six Team</a></h1>
+                    </header>
+                </article>
+                <article class="invert small">
+                    <header><h1>What is Bagun?</h1></header>
+                    <div>
+                        <p>
+                            an esports organization made by a couple of friends
+                            that aren't the best but strive to be
+                        </p>
+                        <a href="about" class="link">
+                            See more here
+                        </a>
                     </div>
-                    <div class="content-wrapper">
-                        <div class="content">
-                            <h1>
-                                <a href="divisions/rainbow-six-siege.html">
-                                    Rainbow Six Team
-                                </a>
-                            </h1>
-                        </div>
-                    </div>
-                </section>
-                <section class="section--text">
-                    <div class="content-wrapper">
-                        <div class="content">
-                            <h1>What is Bagun?</h1>
-                            <p>
-                                an esports organization made by a couple of
-                                friends that aren't the best but strive to be
-                            </p>
-                            <a href="about.html" class="link--black">
-                                See more here
-                            </a>
-                        </div>
-                    </div>
-                </section>
-                <section class="section--image">
-                    <div class="section-background">
-                        <img src="assets/destiny.jpg" />
-                    </div>
-                    <div class="content-wrapper">
-                        <div class="content">
-                            <h1>
-                                <a href="divisions/destiny.html">
-                                    Destiny Team
-                                </a>
-                            </h1>
-                        </div>
-                    </div>
-                </section>
+                </article>
+                <article style="background-image: url(assets/destiny.jpg);">
+                    <header>
+                        <h1><a href="divisions/destiny">Destiny Team</a></h1>
+                    </header>
+                </article>
             </div>
-        </div>
+        </main>
         <%- include('static/footer') %>
     </body>
 </html>

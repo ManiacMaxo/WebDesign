@@ -1,0 +1,38 @@
+.chain {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+.chain article {
+  height: 100vh;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.chain article header {
+  margin: 0 auto;
+  align-self: center;
+  width: fit-content;
+}
+.chain article header h1 {
+  margin: 0;
+  font-size: 5vmax;
+  transition: 0.2s;
+}
+.chain article header h1:hover {
+  transform: scale(1.3);
+}
+.chain .small {
+  height: 60vh;
+}
+.chain .small header h1:hover {
+  transform: none;
+}
+
+/*# sourceMappingURL=chain.css.map */

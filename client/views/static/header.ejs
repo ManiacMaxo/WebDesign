@@ -1,51 +1,46 @@
-<div class="nav-wrapper">
-    <header class="nav">
-        <div class="nav-logo">
-            <a href="/">
-                <img src="assets/cat.svg" alt="Bagun" />
-            </a>
-        </div>
-        <!-- Routes -->
-        <ul class="nav-routes">
-            <li><a href="/">Home</a></li>
+<header class="site-header">
+    <div class="logo">
+        <a href="/">
+            <img src="assets/cat.svg" alt="Bagun" />
+        </a>
+    </div>
+    <!-- Routes -->
+    <ul class="header-routes">
+        <li><a href="/">Home</a></li>
+        <li>
+            <a href="news">News</a>
+        </li>
+        <li><a href="join">Join BAGUN</a></li>
+        <li class="dropdown">Divisions</li>
+        <ul class="dropdown-content">
+            <li><a href="divisions/all">All players</a></li>
+            <li><a href="divisions/destiny">Destiny</a></li>
             <li>
-                <a href="news/news.html">News</a>
+                <a href="divisions/r6">
+                    Rainbow Six Siege
+                </a>
             </li>
-            <li><a href="join-bagun.html">Join BAGUN</a></li>
-            <li><button class="nav-folder">Divisions</button></li>
-            <ul class="nav-folder-content">
-                <li><a href="divisions/players.html">All players</a></li>
-                <li><a href="divisions/destiny.html">Destiny</a></li>
-                <li>
-                    <a href="divisions/rainbow-six-siege.html">
-                        Rainbow Six Siege
-                    </a>
-                </li>
-                <li><a href="divisions/valorant.html">Valorant</a></li>
-            </ul>
-            <li><a href="about.html">About</a></li>
+            <li><a href="divisions/valorant">Valorant</a></li>
         </ul>
-        <div class="nav-end">
-            <div class="link">
-                <a href="shop.html">Shop</a>
-            </div>
-
-            <!-- Mobile nav -->
-            <div class="nav-burger">
-                <button class="btn burger">
-                    <span>&#9776;</span>
-                </button>
-                <div class="burger-menu-wrapper">
-                    <ul class="burger-menu">
-                        <li><button class="btn menu-close-btn"></button></li>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="news/news.html">News</a></li>
-                        <li><a href="join-bagun.html">Join BAGUN</a></li>
-                        <li><a class="burger-menu-folder">Divisions</a></li>
-                        <li><a href="about.html">About</a></li>
-                    </ul>
-                </div>
-            </div>
+        <li><a href="about">About</a></li>
+    </ul>
+    <div class="header-end">
+        <div class="link">
+            <a href="shop">Shop</a>
         </div>
-    </header>
-</div>
+
+        <!-- Mobile header -->
+        <button class="btn burger">
+            <span>&#9776;</span>
+        </button>
+    </div>
+    <div class="burger-menu-wrapper hide">
+        <ul class="burger-menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="news">News</a></li>
+            <li><a href="join">Join BAGUN</a></li>
+            <li><a class="burger-menu-folder">Divisions</a></li>
+            <li><a href="about">About</a></li>
+        </ul>
+    </div>
+</header>

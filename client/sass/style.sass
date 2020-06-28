@@ -1,5 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap')
-@import main
-@import header
-@import footer
+@import const
 
+*
+    box-sizing: border-box
+
+body
+    background: $black
+    color: $white
+    font-family: 'Oxygen', sans-serif
+    margin: 0
+    font-size: 1.25rem
+
+ul
+    list-style: none
+
+a
+    text-decoration: none
+    color: inherit
+
+.invert
+    filter: invert(100%)
+
+main // body
+    margin-top: 4rem
+    color: $white
+    min-height: 75vh // sticky footer
+
+.link // button-like link
+    border: 2px solid $white
+    background: transparent
+    font-size: 0.75rem
+    padding: 0.2rem 0.5rem
+    transition: 0.3s
+    &:hover
+        background: $white
+        color: $black
+    &--black
+        @extend .link
+        font-size: 1rem
+        color: $black
+        border-color: $black
+        &:hover
+            border-color: $black
+            color: $white
+            background: $black
