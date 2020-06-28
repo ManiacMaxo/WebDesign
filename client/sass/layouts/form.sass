@@ -1,0 +1,16 @@
+@import ../const
+
+.form
+    display: flex
+    flex-direction: column
+    width: fit-content
+    margin: 0 auto
+    input
+        margin: 1% 0
+        padding: 1%
+        width: clamp(300px, 70vw, 600px)
+        &[type=submit]
+            border: 2px solid $white
+            background: transparent
+            color: $white
+            width: 5rem

@@ -1,0 +1,46 @@
+@import ../const
+
+.player-cards
+    margin: 0 auto
+    width: 100%
+    max-width: 1350px
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-evenly
+    section
+        margin: 2%
+        position: relative
+        height: 300px
+        width: 300px
+        border-radius: 10px
+        .section-background
+            z-index: -1
+            position: absolute
+            width: 100%
+            height: 100%
+            img
+                display: block
+                width: inherit
+                height: inherit
+                transition: 0.2s
+        .content-wrapper
+            height: 100%
+            opacity: 0
+            transition: 0.2s
+            display: box
+            align-items: center
+            .content
+                align-self: center
+                margin: auto
+                display: flex
+                flex-direction: column
+                align-items: center
+                justify-content: center
+                h1
+                    font-size: 2rem
+                    margin: 0
+        &:hover
+            .content-wrapper
+                opacity: 1
+            .section-background img
+                filter: blur(5px)

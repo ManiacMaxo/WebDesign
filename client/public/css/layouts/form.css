@@ -1,0 +1,19 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin: 0 auto;
+}
+.form input {
+  margin: 1% 0;
+  padding: 1%;
+  width: clamp(300px, 70vw, 600px);
+}
+.form input[type=submit] {
+  border: 2px solid #fafafa;
+  background: transparent;
+  color: #fafafa;
+  width: 5rem;
+}
+
+/*# sourceMappingURL=form.css.map */

@@ -1,0 +1,63 @@
+.vertical-chain {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+.vertical-chain .section, .vertical-chain .section--text, .vertical-chain .section--image {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+.vertical-chain .section h1, .vertical-chain .section--text h1, .vertical-chain .section--image h1 {
+  margin: 0;
+  font-size: 5vmax;
+}
+.vertical-chain .section--image {
+  justify-content: center;
+}
+.vertical-chain .section--image h1 a {
+  display: block;
+  color: #fafafa;
+  align-self: center;
+  transition: 0.2s;
+}
+.vertical-chain .section--image h1 a:hover {
+  transform: scale(1.3);
+}
+.vertical-chain .section--image .section-background {
+  position: absolute;
+  overflow: hidden;
+  height: 100%;
+  width: 100vw;
+}
+.vertical-chain .section--image .section-background img {
+  height: 100vh;
+  filter: blur(10px);
+}
+.vertical-chain .section--image .content-wrapper {
+  align-items: center;
+}
+.vertical-chain .section--text {
+  background: white;
+  height: 70vh;
+  color: black;
+  font-size: 1.5rem;
+}
+.vertical-chain .section--text .content-wrapper {
+  padding: 0 10vw;
+}
+.vertical-chain .content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  padding: 0 2rem;
+}
+.vertical-chain .content-wrapper .content {
+  flex-direction: column;
+  width: fit-content;
+}
+
+/*# sourceMappingURL=verticalchain.css.map */
