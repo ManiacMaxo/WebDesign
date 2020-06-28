@@ -2,6 +2,9 @@
     "name": "bagun",
     "version": "1.0.0",
     "main": "client/server.js",
+    "scripts": {
+        "start": "nodemon /client/server.js"
+    },
     "repository": "https://github.com/ManiacMaxo/WebDesign",
     "author": "Victor <victor@gorchilov.com>",
     "license": "MIT",
