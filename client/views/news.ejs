@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <title>BAGUN | News</title>
         <%- include('static/head') %>
         <link rel="stylesheet" href="/css/layouts/newscards.css" />
     </head>
@@ -8,42 +9,17 @@
         <%- include('static/header') %>
         <main>
             <div class="news-cards">
+                <% news.forEach(item => { %>
                 <section>
-                    <h1>New Valorant team</h1>
-                    <div>
-                        <p>
-                            We are looking for members to join the team. Please
-                            contact us if you have any questions
-                        </p>
-                        <a href="new-valorant-team.html" class="link">
+                    <h1><%= item.name %></h1>
+                    <content>
+                        <p><%= item.body.substring(0, 100) %>...</p>
+                        <a href="news/<%= item.id %>" class="link">
                             See more here
                         </a>
-                    </div>
+                    </content>
                 </section>
-                <section>
-                    <h1>Join the new Discord</h1>
-                    <div>
-                        <p>
-                            Since moving to PC the place to chill has become
-                            Discord
-                        </p>
-                        <a href="discord-server.html" class="link">
-                            See more here
-                        </a>
-                    </div>
-                </section>
-                <section>
-                    <h1>Clan moves to PC</h1>
-                    <div>
-                        <p>
-                            As most members got a PC the time for dominating
-                            with a mouse and keyboard has come
-                        </p>
-                        <a href="bagun-to-pc.html" class="link">
-                            See more here
-                        </a>
-                    </div>
-                </section>
+                <% }) %>
             </div>
         </main>
         <%- include('static/footer') %>

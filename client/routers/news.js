@@ -1,12 +1,21 @@
 const express = require('express')
 const router = express.Router()
+const Article = require('../../src/models/article')
 
 router.get('/', (req, res, next) => {
-    res.render('news')
+    Article.getNews().then((rows) => {
+        res.render('news', { news: rows })
+    })
 })
 
+
 router.get('/:id', (req, res, next) => {
-    res.render('article', { title: req.params.id })
+    Article.getById(req.params.id).then((rows) => {
+        console.log(rows)
+        res.render('article', {
+            content: rows[0],
+        })
+    })
 })
 
 module.exports = router
