@@ -28,9 +28,14 @@ main {
   margin-top: 4rem;
   padding: 0 10%;
   color: #fafafa;
-  min-height: calc(75vh - 1rem);
+  min-height: calc(85vh - 6rem);
 }
 
+@media (max-width: 900px) {
+  main {
+    min-height: calc(85vh - 8rem);
+  }
+}
 .link {
   border: 2px solid #fafafa;
   background: transparent;

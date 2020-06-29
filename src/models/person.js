@@ -1,6 +1,6 @@
-import db from '../db'
+const db = require('../db')
 
-export class Person {
+module.exports = class Person {
     constructor(name, description, picturelURL, position) {
         this.name = name
         this.description = description

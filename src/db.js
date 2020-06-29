@@ -1,4 +1,6 @@
-import 'mysql'
-import config from '../secret'
+const mysql = require('mysql')
+const { config } = require('../secret')
 
-export const db = mysql.createConnection(config)
+const db = mysql.createConnection(config)
+
+module.exports = db

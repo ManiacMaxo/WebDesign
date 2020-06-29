@@ -1,16 +1,65 @@
 @import ../const
 
+.form header
+    display: flex
+    flex-direction: column
+    align-items: center
+
 form
     display: flex
     flex-direction: column
-    label
-        font-size: 1rem
-    input
-        margin: 1% 0
-        padding: 1%
-        // width: clamp(300px, 70vw, 600px)
-        &[type=submit]
-            border: 2px solid $white
-            background: transparent
+    align-items: center
+    .form-group
+        position: relative
+        padding: 1rem 0 0
+        margin: 1rem 0
+        width: 50%
+        input
+            font-family: inherit
+            width: 100%
+            border: none
+            border-bottom: 2px solid $white
+            outline: none
+            font-size: 1.3rem
             color: $white
-            width: 5rem
+            padding: 7px 0
+            background: transparent
+            transition: border-color 0.2s
+            &::placeholder
+                color: transparent
+            &:placeholder-shown ~ label
+                font-size: 1.3rem
+                cursor: text
+                top: 20px
+        label
+            position: absolute
+            top: 0
+            display: block
+            transition: 0.2s
+            font-size: 1rem
+            color: $white
+        input:focus
+            padding-bottom: 6px
+            font-weight: 700
+            border-width: 0 0 3px 0
+            border-image: $rainbow
+            border-image-slice: 1
+            ~ label
+                position: absolute
+                top: 0
+                display: block
+                transition: 0.2s
+                font-size: 1rem
+                color: #00C0FF
+                font-weight: 700
+    button
+        background: transparent
+        font-size: 1.3rem
+        border: 2px solid $white
+        padding: 0.5rem
+        color: $white
+        width: 50%
+        &:hover, &:focus
+            border-image: $rainbow
+            background: $rainbow
+            outline: none

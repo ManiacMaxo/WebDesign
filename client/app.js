@@ -8,7 +8,7 @@ const newsRouter = require('./routers/news')
 const formRouter = require('./routers/form')
 const testingRouter = require('./routers/testing')
 
-let app = express()
+const app = express()
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))

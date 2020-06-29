@@ -25,7 +25,11 @@ main // body
     margin-top: 4rem
     padding: 0 10%
     color: $white
-    min-height: calc(75vh - 1rem) // sticky footer - margin
+    min-height: calc(85vh - 6rem) // sticky footer - margin
+
+@media (max-width: 900px)
+    main
+        min-height: calc(85vh - 8rem)
 
 .link // button-like link
     border: 2px solid $white
