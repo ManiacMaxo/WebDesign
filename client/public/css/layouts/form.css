@@ -74,10 +74,15 @@ form button {
   color: #fafafa;
   width: 50%;
 }
-form button:hover, form button:focus {
+form button:hover:enabled, form button:focus:enabled {
   border-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
   background: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
   outline: none;
+  cursor: pointer;
+}
+form button:disabled {
+  color: #8b8b8b;
+  border-color: #8b8b8b;
 }
 
 /*# sourceMappingURL=form.css.map */

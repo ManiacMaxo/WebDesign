@@ -65,7 +65,11 @@ form
         padding: 0.5rem
         color: $white
         width: 50%
-        &:hover, &:focus
+        &:hover:enabled, &:focus:enabled
             border-image: $rainbow
             background: $rainbow
             outline: none
+            cursor: pointer
+        &:disabled
+            color: #8b8b8b
+            border-color: #8b8b8b

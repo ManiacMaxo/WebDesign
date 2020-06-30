@@ -13,8 +13,5 @@ html
 # Testing
 temp
 
-# Sass
-*.map
-
 # Secret
 secret.json
