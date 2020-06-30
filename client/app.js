@@ -2,6 +2,7 @@ const createError = require('http-errors')
 const express = require('express')
 const path = require('path')
 const logger = require('morgan')
+const fs = require('fs')
 
 const indexRouter = require('./routers/index')
 const newsRouter = require('./routers/news')
@@ -15,7 +16,13 @@ const app = express()
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 
+const accessLogStream = fs.createWriteStream(
+    path.join(__dirname, '../access.log'),
+    { flags: 'a' }
+)
+app.use(logger('combined', { stream: accessLogStream }))
 app.use(logger('dev'))
+
 app.use(express.urlencoded({ extended: false }))
 app.use(express.static(path.join(__dirname, 'public')))
 

@@ -15,3 +15,6 @@ temp
 
 # Secret
 secret.json
+
+# Log
+*.log
