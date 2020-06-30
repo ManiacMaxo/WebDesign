@@ -9,6 +9,9 @@ router.get('/', (req, res, next) => {
 })
 
 router.get('/:game', (req, res, next) => {
+    if (req.params.game === 'all') {
+        res.redirect('/divisions')
+    }
     Person.getByGame(req.params.game).then((rows) => {
         console.log(rows)
         res.render('division', { title: req.params.game, players: rows })

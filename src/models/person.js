@@ -1,18 +1,18 @@
 const db = require('../db')
 
 module.exports = class Person {
-    constructor(name, description, picturelURL, game) {
+    constructor(name, description, pictureURL, game) {
         this.name = name
         this.description = description
-        this.picturelURL = picturelURL
+        this.pictureURL = pictureURL
         this.games = games
     }
 
     save() {
         return db
             .query(
-                `INSERT INTO people (name, description, picturelURL) VALUES (?, ?, ?) RETURNING id`,
-                [this.name, this.description, this.picturelURL]
+                `INSERT INTO people (name, description, pictureURL) VALUES (?, ?, ?) RETURNING id`,
+                [this.name, this.description, this.pictureURL]
             )
             .then((res) => {
                 this.id = res.rows[0].id

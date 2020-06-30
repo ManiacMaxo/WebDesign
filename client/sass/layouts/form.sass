@@ -15,6 +15,7 @@ form
         padding: 1rem 0 0
         margin: 1rem 0
         width: 50%
+        max-width: 800px
         input
             font-family: inherit
             width: 100%
@@ -53,22 +54,26 @@ form
                 font-size: 1rem
                 color: #f79533
                 font-weight: 700
+        button
+            background: transparent
+            font-size: 1.3rem
+            border: 2px solid $white
+            padding: 0.5rem
+            color: $white
+            width: 100%
+            &:hover:enabled, &:focus:enabled
+                background: $rainbow
+                outline: none
+                cursor: pointer
+            &:disabled
+                color: #8b8b8b
+                border-color: #8b8b8b
     .error
         display: none
         color: red
         margin-bottom: 1rem
         font-size: 1rem
-    button
-        background: transparent
-        font-size: 1.3rem
-        border: 2px solid $white
-        padding: 0.5rem
-        color: $white
-        width: 50%
-        &:hover:enabled, &:focus:enabled
-            background: $rainbow
-            outline: none
-            cursor: pointer
-        &:disabled
-            color: #8b8b8b
-            border-color: #8b8b8b
+
+@media (max-width: 700px)
+    form .form-group
+        width: 80%
