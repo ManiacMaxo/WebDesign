@@ -11,6 +11,7 @@ router.get('/', (req, res, next) => {
 router.get('/:game', (req, res, next) => {
     if (req.params.game === 'all') {
         res.redirect('/divisions')
+        return
     }
     Person.getByGame(req.params.game).then((rows) => {
         console.log(rows)
