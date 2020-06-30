@@ -13,7 +13,7 @@ module.exports = class Application {
     save() {
         return db
             .query(
-                `INSERT INTO applications (name, email, twitter, youtube, game, age) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id`,
+                `INSERT INTO applications (name, email, twitter, youtube, game, age) VALUES (?, ?, ?, ?, ?, ?) RETURNING id`,
                 [
                     this.name,
                     this.email,
@@ -33,10 +33,10 @@ module.exports = class Application {
     }
 
     static getByAge(age) {
-        return db.query(`SELECT * FROM applications WHERE age = $1`, [age])
+        return db.query(`SELECT * FROM applications WHERE age = ?`, [age])
     }
 
     static getByGame(game) {
-        return db.query(`SELECT * FROM applications WHERE game = $1`, [game])
+        return db.query(`SELECT * FROM applications WHERE game = ?`, [game])
     }
 }

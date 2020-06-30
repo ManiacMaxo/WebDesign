@@ -7,6 +7,7 @@ const fs = require('fs')
 const indexRouter = require('./routers/index')
 const newsRouter = require('./routers/news')
 const formRouter = require('./routers/form')
+const divisionsRouter = require('./routers/divisions')
 const createRouter = require('./routers/create')
 const testingRouter = require('./routers/testing')
 
@@ -30,6 +31,7 @@ app.use('/', indexRouter)
 app.use('/', formRouter)
 app.use('/news', newsRouter)
 app.use('/create', createRouter)
+app.use('/divisions', divisionsRouter)
 app.use('/test', testingRouter)
 
 // catch 404 and forward to error handler

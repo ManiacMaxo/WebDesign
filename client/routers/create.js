@@ -19,6 +19,16 @@ router.get('/person', (req, res, next) => {
             type: 'text',
         },
         {
+            name: 'age',
+            required: true,
+            type: 'number',
+        },
+        {
+            name: 'country',
+            required: true,
+            type: 'text',
+        },
+        {
             name: 'games',
             required: true,
             type: 'text',

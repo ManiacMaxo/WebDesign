@@ -25,7 +25,7 @@ module.exports = class Person {
     }
 
     static getAll() {
-        return db.query(`SELECT * FROM people JOIN games USING id`)
+        return db.query(`SELECT * FROM people`)
     }
 
     static getById(id) {
@@ -34,7 +34,7 @@ module.exports = class Person {
 
     static getByGame(game) {
         return db.query(
-            `SELECT * FROM people JOIN games USING id WHERE game = ?`,
+            `SELECT * FROM people JOIN games USING (id) WHERE game = ?`,
             [game]
         )
     }

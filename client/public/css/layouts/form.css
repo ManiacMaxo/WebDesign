@@ -48,7 +48,7 @@ form .form-group input:focus {
   padding-bottom: 6px;
   font-weight: 700;
   border-width: 0 0 3px 0;
-  border-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
+  border-image: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
   border-image-slice: 1;
 }
 form .form-group input:focus ~ label {
@@ -57,7 +57,7 @@ form .form-group input:focus ~ label {
   display: block;
   transition: 0.2s;
   font-size: 1rem;
-  color: #00C0FF;
+  color: #f79533;
   font-weight: 700;
 }
 form .error {
@@ -75,8 +75,7 @@ form button {
   width: 50%;
 }
 form button:hover:enabled, form button:focus:enabled {
-  border-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
-  background: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
   outline: none;
   cursor: pointer;
 }

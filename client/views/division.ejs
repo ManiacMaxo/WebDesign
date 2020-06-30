@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title><%= title %></title>
+        <%- include('static/head') %>
+        <link rel="stylesheet" href="/css/layouts/snake.css" />
+    </head>
+    <body>
+        <%- include('static/header') %>
+        <main>
+            <div class="player-cards">
+                <% players.forEach(player => { %>
+                <section>
+                    <header>
+                        <img src="/assets/maniacmaxo.jpeg" />
+                    </header>
+                    <div class="content">
+                        <a href="<%= player.id %>">
+                            <h2><%= player.name %></h2>
+                        </a>
+                        <span><%= player.age %>, <%= player.country %></span>
+                    </div>
+                </section>
+                <% }) %>
+            </div>
+        </main>
+        <%- include('static/footer') %>
+    </body>
+</html>

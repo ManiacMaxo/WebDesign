@@ -1,4 +1,6 @@
 .site-header {
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   display: grid;
   align-items: center;
   height: 4rem;
@@ -97,6 +99,8 @@
 }
 
 .burger-menu-wrapper {
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   height: calc(100vh - 6rem);
   width: 100vw;
   position: fixed;
