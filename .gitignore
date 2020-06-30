@@ -6,3 +6,15 @@
 
 # Node.js
 node_modules
+
+# Old html files
+html
+
+# Testing
+temp
+
+# Secret
+secret.json
+
+# Log
+*.log

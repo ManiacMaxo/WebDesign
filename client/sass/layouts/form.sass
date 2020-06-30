@@ -1,0 +1,79 @@
+@import ../const
+
+.form header
+    display: flex
+    flex-direction: column
+    align-items: center
+    text-transform: capitalize
+
+form
+    display: flex
+    flex-direction: column
+    align-items: center
+    .form-group
+        position: relative
+        padding: 1rem 0 0
+        margin: 1rem 0
+        width: 50%
+        max-width: 800px
+        input
+            font-family: inherit
+            width: 100%
+            border: none
+            border-bottom: 2px solid $white
+            outline: none
+            font-size: 1.3rem
+            color: $white
+            padding: 7px 0
+            background: transparent
+            transition: border-color 0.2s
+            &::placeholder
+                color: transparent
+            &:placeholder-shown ~ label
+                font-size: 1.3rem
+                cursor: text
+                top: 20px
+        label
+            position: absolute
+            top: 0
+            display: block
+            transition: 0.2s
+            font-size: 1rem
+            color: $white
+        input:focus
+            padding-bottom: 6px
+            font-weight: 700
+            border-width: 0 0 3px 0
+            border-image: $rainbow
+            border-image-slice: 1
+            ~ label
+                position: absolute
+                top: 0
+                display: block
+                transition: 0.2s
+                font-size: 1rem
+                color: #f79533
+                font-weight: 700
+        button
+            background: transparent
+            font-size: 1.3rem
+            border: 2px solid $white
+            padding: 0.5rem
+            color: $white
+            width: 100%
+            &:hover:enabled, &:focus:enabled
+                background: $rainbow
+                outline: none
+                cursor: pointer
+            &:disabled
+                color: #8b8b8b
+                border-color: #8b8b8b
+    .error
+        display: none
+        color: red
+        margin-bottom: 1rem
+        font-size: 1rem
+
+@media (max-width: 700px)
+    form .form-group
+        width: 80%

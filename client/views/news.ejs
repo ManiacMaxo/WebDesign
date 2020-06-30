@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>BAGUN | News</title>
+        <%- include('static/head') %>
+        <link rel="stylesheet" href="/css/layouts/newscards.css" />
+    </head>
+    <body>
+        <%- include('static/header') %>
+        <main>
+            <div class="news-cards">
+                <% news.forEach(item => { %>
+                <section>
+                    <a href="/news/<%= item.id %>">
+                        <h1><%= item.name %></h1>
+                    </a>
+                    <content>
+                        <p><%= item.body.substring(0, 100) %>...</p>
+                        <a href="/news/<%= item.id %>" class="link">
+                            See more here
+                        </a>
+                    </content>
+                </section>
+                <% }) %>
+            </div>
+        </main>
+        <%- include('static/footer') %>
+    </body>
+</html>

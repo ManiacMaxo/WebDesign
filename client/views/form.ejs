@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('static/head') %>
+        <link rel="stylesheet" href="/css/layouts/form.css" />
+        <% if (title === 'register') { %>
+        <script src="/js/pass.js" defer type="module"></script>
+        <% } %>
+    </head>
+    <body>
+        <%- include('static/header') %>
+        <main>
+            <div class="form">
+                <header>
+                    <h1><%= title %></h1>
+                </header>
+                <form action="<%= action %>" method="POST">
+                    <% fields.forEach(field => { %>
+                    <div class="form-group">
+                        <input
+                            type="<%= field.type %>"
+                            autocomplete="<%= field.name %>"
+                            placeholder="<%= field.name %>"
+                            name="<%= field.name %>"
+                            spellcheck="false"
+                            <% if (field.required) { %> required <% } %>
+                        />
+                        <label><%= field.name %></label>
+                    </div>
+                    <% }) %> <% if (title === 'register') { %>
+                    <span class="error" id="passerror">
+                        <i class="fas fa-exclamation-circle"></i>
+                        The passwords do not match
+                    </span>
+                    <% } %>
+                    <div class="form-group">
+                        <button type="submit" id="submit"><%= title %></button>
+                    </div>
+                </form>
+            </div>
+        </main>
+        <%- include('static/footer') %>
+    </body>
+</html>
