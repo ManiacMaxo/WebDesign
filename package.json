@@ -3,7 +3,8 @@
     "version": "1.0.0",
     "main": "client/server.js",
     "scripts": {
-        "start": "nodemon /client/server.js",
+        "start": "forever start -w client/server.js",
+        "stop": "forever stop client/server.js",
         "dev": "sass --watch client/sass:client/public/css"
     },
     "repository": "https://github.com/ManiacMaxo/WebDesign",
@@ -21,6 +22,7 @@
         "sass": "^1.26.9"
     },
     "devDependencies": {
+        "forever": "^3.0.0",
         "nodemon": "^2.0.4"
     }
 }
