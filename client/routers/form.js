@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Application = require('../../src/models/application')
+const { route } = require('./create')
 
 router.get('/join', (req, res, next) => {
     fields = [
@@ -12,7 +13,7 @@ router.get('/join', (req, res, next) => {
         {
             name: 'email',
             required: true,
-            type: 'text',
+            type: 'email',
         },
         {
             name: 'twitter',
@@ -36,7 +37,7 @@ router.get('/join', (req, res, next) => {
         },
     ]
 
-    res.render('form', { title: 'submit', fields: fields })
+    res.render('form', { action: 'join', title: 'join bagun', fields: fields })
 })
 
 router.post('/join', (req, res, next) => {
@@ -46,6 +47,35 @@ router.post('/join', (req, res, next) => {
         .then(() => {
             res.redirect('/')
         })
+})
+
+router.get('/register', (req, res, next) => {
+    fields = [
+        {
+            name: 'email',
+            required: true,
+            type: 'email',
+        },
+        {
+            name: 'password',
+            required: true,
+            type: 'password',
+        },
+        {
+            name: 'confirm password',
+            required: true,
+            type: 'password',
+        },
+    ]
+    res.render('form', {
+        action: 'register',
+        title: 'register',
+        fields: fields,
+    })
+})
+
+router.post('/register', (req, res, next) => {
+    const { email, password } = req.body
 })
 
 module.exports = router

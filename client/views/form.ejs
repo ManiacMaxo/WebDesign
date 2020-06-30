@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <%- include('static/head') %>
+        <script src="/js/pass.js" defer type="module"></script>
         <link rel="stylesheet" href="/css/layouts/form.css" />
     </head>
     <body>
@@ -9,9 +10,9 @@
         <main>
             <div class="form">
                 <header>
-                    <h1>Joining Bagun</h1>
+                    <h1><%= title %></h1>
                 </header>
-                <form action="join" method="POST">
+                <form action="<%= action %>" method="POST">
                     <% fields.forEach(field => { %>
                     <div class="form-group">
                         <input
@@ -27,6 +28,12 @@
                         <label><%= field.name %></label>
                     </div>
                     <% }) %>
+                    <% if (title === 'register') { %>
+                    <span class="error" id="passerror">
+                        <i class="fas fa-exclamation-circle"></i>
+                        The passwords do not match
+                    </span>
+                    <% } %>
                     <button type="submit" id="submit"><%= title %></button>
                 </form>
             </div>

@@ -8,10 +8,8 @@ router.get('/', (req, res, next) => {
     })
 })
 
-
 router.get('/:id', (req, res, next) => {
     Article.getById(req.params.id).then((rows) => {
-        console.log(rows)
         res.render('article', {
             content: rows[0],
         })

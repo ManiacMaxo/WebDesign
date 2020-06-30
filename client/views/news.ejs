@@ -11,10 +11,12 @@
             <div class="news-cards">
                 <% news.forEach(item => { %>
                 <section>
-                    <h1><%= item.name %></h1>
+                    <a href="/news/<%= item.id %>">
+                        <h1><%= item.name %></h1>
+                    </a>
                     <content>
                         <p><%= item.body.substring(0, 100) %>...</p>
-                        <a href="news/<%= item.id %>" class="link">
+                        <a href="/news/<%= item.id %>" class="link">
                             See more here
                         </a>
                     </content>
