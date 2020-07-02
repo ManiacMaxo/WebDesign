@@ -70,17 +70,14 @@
 .site-header .active {
   height: 2.5rem;
 }
-.site-header .active span {
-  margin: -2px;
-}
-.site-header .active span:nth-child(1) {
-  transform: rotate(-45deg);
+.site-header .active span:first-child {
+  transform: translateY(10px) rotate(-45deg);
 }
 .site-header .active span:nth-child(2) {
   transform: scale(0);
 }
-.site-header .active span:nth-child(3) {
-  transform: rotate(45deg);
+.site-header .active span:last-child {
+  transform: translateY(-10px) rotate(45deg);
 }
 .site-header .burger {
   display: none;
