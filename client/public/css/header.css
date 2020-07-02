@@ -12,7 +12,10 @@
   background-color: rgba(0, 0, 0, 0.7);
 }
 .site-header .logo {
-  height: 100%;
+  position: relative;
+  transform: translateY(-50%);
+  top: 50%;
+  height: 80%;
 }
 .site-header .logo a img {
   height: 100%;
@@ -64,19 +67,19 @@
   color: inherit;
   font-size: 2rem;
 }
-.site-header .btn .active {
+.site-header .active {
   height: 2.5rem;
 }
-.site-header .btn .active span {
+.site-header .active span {
   margin: -2px;
 }
-.site-header .btn .active span:nth-child(1) {
+.site-header .active span:nth-child(1) {
   transform: rotate(-45deg);
 }
-.site-header .btn .active span:nth-child(2) {
+.site-header .active span:nth-child(2) {
   transform: scale(0);
 }
-.site-header .btn .active span:nth-child(3) {
+.site-header .active span:nth-child(3) {
   transform: rotate(45deg);
 }
 .site-header .burger {
