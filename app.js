@@ -9,7 +9,7 @@ const store = new FileStore()
 
 const app = express()
 const accessLogStream = fs.createWriteStream(
-    path.join(__dirname, '../access.log'),
+    path.join(__dirname, 'access.log'),
     { flags: 'a' }
 )
 
