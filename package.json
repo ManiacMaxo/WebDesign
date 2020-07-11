@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "main": "server.js",
     "scripts": {
-        "start": "forever start -w server.js",
+        "start": "forever start server.js",
         "stop": "forever stop server.js",
         "dev": "sass --watch sass:public/css --style compressed"
     },
@@ -19,8 +19,10 @@
         "http-errors": "^1.7.3",
         "morgan": "^1.10.0",
         "mysql": "^2.18.1",
-        "sass": "^1.26.9",
-        "session-file-store": "^1.4.0"
+        "session-file-store": "^1.4.0",
+        "vhost": "^3.0.2"
     },
-    "devDependencies": {}
+    "devDependencies": {
+        "sass": "^1.26.10"
+    }
 }

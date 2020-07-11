@@ -12,7 +12,6 @@ exports.getByGame = (req, res, next) => {
         return
     }
     Person.getByGame(req.params.game).then((rows) => {
-        console.log(rows)
         res.render('division', { title: req.params.game, players: rows })
     })
 }

@@ -1,4 +1,4 @@
-#!/usr/bin/env nodemon
+#!/usr/local/bin/nodemon
 
 const app = require('./app')
 const debug = require('debug')('temp:server')
