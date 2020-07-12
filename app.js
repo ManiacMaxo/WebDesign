@@ -8,13 +8,10 @@ const FileStore = require('session-file-store')(session)
 const store = new FileStore()
 
 const app = express()
-const accessLogStream = fs.createWriteStream(
-    path.join(__dirname, 'access.log'),
-    { flags: 'a' }
-)
+const accessLogStream = fs.createWriteStream('access.log', { flags: 'a' })
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'))
+app.set('views', 'views')
 app.set('view engine', 'ejs')
 
 const indexRoutes = require('./routes/index')
@@ -35,8 +32,9 @@ app.use(
 )
 
 app.use(express.urlencoded({ extended: false }))
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static('public'))
 
+app.use('/static', express.static('public'))
 app.use(indexRoutes)
 app.use(formRoutes)
 app.use('/admin', adminRoutes)
