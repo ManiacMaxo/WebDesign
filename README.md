@@ -6,4 +6,4 @@ repository for the webpage of Bagun Esports
 **This is the main page of the site**
 
 
-Site moved to http://bagun.gorchilov.net:3000
+Site moved to http://bagun.gorchilov.net
