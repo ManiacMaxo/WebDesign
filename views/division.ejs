@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title><%= title %></title>
+        <title>
+            <%= title.charAt(0).toUpperCase() + title.slice(1) %> | BAGUN
+        </title>
         <%- include('static/head') %>
         <link rel="stylesheet" href="/static/css/layouts/snake.css" />
     </head>

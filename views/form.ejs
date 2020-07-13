@@ -20,14 +20,10 @@
                             placeholder="<%= field.name %>"
                             name="<%= field.name %>"
                             spellcheck="false"
-                            <%
-                            if(field.required)
-                            {
-                            %
-                        />
-                        required <% } %> />
+                            <% if (field.required) { %> required <% } %> />
                         <label><%= field.name %></label>
                     </div>
+                    <% }) %>
                     <div class="form-group">
                         <button type="submit" id="submit"><%= title %></button>
                     </div>
