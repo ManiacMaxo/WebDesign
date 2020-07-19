@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const vhost = require('vhost')
 const express = require('express')
 const db = require('./util/db')
@@ -10,5 +12,5 @@ server.use(vhost('gorchilov.net', require('./app')))
 
 db.connect().then(() => {
     console.log('connected')
-    server.listen(80)
+    server.listen(3000)
 })
