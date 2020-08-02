@@ -1,10 +1,10 @@
 {
     "name": "bagun",
     "version": "1.0.0",
-    "main": "server.js",
+    "main": "vhosts.js",
     "scripts": {
-        "start": "forever start server.js",
-        "stop": "forever stop server.js",
+        "start": "forever start vhosts.js",
+        "stop": "forever stop vhosts.js",
         "dev": "sass --watch sass:public/css --style compressed"
     },
     "repository": "https://github.com/ManiacMaxo/WebDesign",
