@@ -8,7 +8,7 @@
 node_modules
 
 # Old html files
-html
+.html
 
 # Testing
 temp

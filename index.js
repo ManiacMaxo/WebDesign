@@ -2,13 +2,14 @@
 
 const vhost = require('vhost')
 const express = require('express')
-const db = require('./util/db')
+const db = require('./src/util/db')
+const app = require('./src/app')
 
 const server = express()
 
-server.use(vhost('bagun.local', require('./app')))
-server.use(vhost('bagun.gorchilov.net', require('./app')))
-server.use(vhost('gorchilov.net', require('./app')))
+server.use(vhost('bagun.local', app))
+server.use(vhost('bagun.gorchilov.net', app))
+server.use(vhost('gorchilov.net', app))
 
 db.connect().then(() => {
     console.log('connected')

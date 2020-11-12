@@ -1,6 +1,5 @@
 const createError = require('http-errors')
 const express = require('express')
-const path = require('path')
 const logger = require('morgan')
 const fs = require('fs')
 const session = require('express-session')
@@ -8,31 +7,30 @@ const FileStore = require('session-file-store')(session)
 const store = new FileStore()
 
 const app = express()
-const accessLogStream = fs.createWriteStream('access.log', { flags: 'a' })
+const accessLogStream = fs.createWriteStream('logs/access.log', { flags: 'a' })
 
-// view engine setup
 app.set('views', 'views')
 app.set('view engine', 'ejs')
+
+app.use(logger('combined', { stream: accessLogStream }))
+app.use(logger('dev'))
+// app.use(
+//     session({
+//         secret: 'my secret',
+//         resave: false,
+//         saveUninitialized: false,
+//         store: store,
+//     })
+// )
+
+app.use(express.urlencoded({ extended: false }))
+app.use(express.static('public'))
 
 const indexRoutes = require('./routes/index')
 const formRoutes = require('./routes/form')
 const adminRoutes = require('./routes/admin')
 const newsRoutes = require('./routes/news')
 const divisionsRoutes = require('./routes/divisions')
-
-app.use(logger('combined', { stream: accessLogStream }))
-app.use(logger('dev'))
-app.use(
-    session({
-        secret: 'my secret',
-        resave: false,
-        saveUninitialized: false,
-        store: store,
-    })
-)
-
-app.use(express.urlencoded({ extended: false }))
-app.use(express.static('public'))
 
 app.use('/static', express.static('public'))
 app.use(indexRoutes)

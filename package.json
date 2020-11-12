@@ -1,10 +1,10 @@
 {
     "name": "bagun",
     "version": "1.0.0",
-    "main": "vhosts.js",
+    "main": "index.js",
     "scripts": {
-        "start": "forever start vhosts.js",
-        "stop": "forever stop vhosts.js",
+        "start": "forever start index.js",
+        "stop": "forever stop index.js",
         "dev": "sass --watch sass:public/css --style compressed"
     },
     "repository": "https://github.com/ManiacMaxo/WebDesign",
@@ -18,7 +18,7 @@
         "express-session": "^1.17.1",
         "http-errors": "^1.7.3",
         "morgan": "^1.10.0",
-        "postgresql": "^0.0.1",
+        "pg": "^8.4.1",
         "session-file-store": "^1.4.0",
         "vhost": "^3.0.2"
     },
