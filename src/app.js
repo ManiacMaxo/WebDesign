@@ -9,7 +9,7 @@ const store = new FileStore()
 const app = express()
 const accessLogStream = fs.createWriteStream('logs/access.log', { flags: 'a' })
 
-app.set('views', 'views')
+app.set('views', __dirname + '/views')
 app.set('view engine', 'ejs')
 
 app.use(logger('combined', { stream: accessLogStream }))
