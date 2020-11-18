@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>
-            <%= title.charAt(0).toUpperCase() + title.slice(1) %> | BAGUN
-        </title>
+        <title><%= title.charAt(0).toUpperCase() + title.slice(1) %> | BAGUN</title>
         <%- include('static/head') %>
         <link rel="stylesheet" href="/static/css/layouts/snake.css" />
     </head>
@@ -14,7 +12,7 @@
                 <% players.forEach(player => { %>
                 <section>
                     <header>
-                        <img src="<%= player.pictureURL %>" />
+                        <img src="<%= player.picture %>" />
                     </header>
                     <div class="content">
                         <a href="<%= player.id %>">

@@ -1,26 +1,27 @@
 const db = require('../util/db')
 
 module.exports = class Person {
-    constructor(name, description, pictureURL, game) {
+    constructor(name, description, picture, games) {
         this.name = name
         this.description = description
-        this.pictureURL = pictureURL
+        this.picture = picture
         this.games = games
     }
 
     save() {
         return db
-            .query(
-                `INSERT INTO people (name, description, pictureURL) VALUES (?, ?, ?) RETURNING id`,
-                [this.name, this.description, this.pictureURL]
-            )
+            .query(`INSERT INTO people (name, description, picture) VALUES ($1, $2, $3) RETURNING id`, [
+                this.name,
+                this.description,
+                this.picture,
+            ])
             .then((res) => {
                 this.id = res.rows[0].id
                 let values = []
                 this.games.forEach((game) => {
                     values.append([this.id, game])
                 })
-                db.query(`INSERT INTO games VALUES ?`, values)
+                db.query(`INSERT INTO games VALUES $1`, values)
             })
     }
 
@@ -29,17 +30,14 @@ module.exports = class Person {
     }
 
     static getById(id) {
-        return db.query(`SELECT * FROM people WHERE id = ?`, [id])
+        return db.query(`SELECT * FROM people WHERE id = $1`, [id])
     }
 
     static getByGame(game) {
-        return db.query(
-            `SELECT * FROM people JOIN games USING (id) WHERE game = ?`,
-            [game]
-        )
+        return db.query(`SELECT * FROM people JOIN games USING (id) WHERE game = $1`, [game])
     }
 
     static getGames(id) {
-        return db.query(`SELECT * FROM games WHERE id = ?`, [id])
+        return db.query(`SELECT * FROM games WHERE id = $1`, [id])
     }
 }

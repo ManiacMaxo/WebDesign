@@ -8,16 +8,13 @@ module.exports = class Member {
 
     save() {
         return db
-            .query(
-                `INSERT INTO members (email, pass) VALUES (?, ?) RETURNING id`,
-                [this.email, this.pass]
-            )
+            .query(`INSERT INTO members (email, pass) VALUES ($1, $2) RETURNING id`, [this.email, this.pass])
             .then((res) => {
                 this.id = res.rows[0].id
             })
     }
 
     static getById(id) {
-        return db.query(`SELECT * FROM members WHERE id = ?`, [id])
+        return db.query(`SELECT * FROM members WHERE id = $1`, [id])
     }
 }

@@ -1,17 +1,44 @@
 #!/usr/bin/env node
 
-const vhost = require('vhost')
-const express = require('express')
+const debug = require('debug')('temp:server')
+const http = require('http')
 const db = require('./src/util/db')
 const app = require('./src/app')
 
-const server = express()
+const port = 3000
+app.set('port', port)
 
-server.use(vhost('bagun.local', app))
-server.use(vhost('bagun.gorchilov.net', app))
-server.use(vhost('gorchilov.net', app))
+const server = http.createServer(app)
 
 db.connect().then(() => {
     console.log('connected')
-    server.listen(3000)
+    server.listen(port)
+})
+
+server.on('error', (error) => {
+    if (error.syscall !== 'listen') {
+        throw error
+    }
+
+    let bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port
+
+    // handle specific listen errors with friendly messages
+    switch (error.code) {
+        case 'EACCES':
+            console.error(bind + ' requires elevated privileges')
+            process.exit(1)
+            break
+        case 'EADDRINUSE':
+            console.error(bind + ' is already in use')
+            process.exit(1)
+            break
+        default:
+            throw error
+    }
+})
+
+server.on('listening', () => {
+    let addr = server.address()
+    let bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port
+    debug('Listening on ' + bind)
 })

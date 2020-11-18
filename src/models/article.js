@@ -13,13 +13,7 @@ module.exports = class Article {
         return db
             .query(
                 `INSERT INTO articles (name, body, thumbnailURL, authorid) VALUES ($1, $2, $3, $4, $5) RETURNING id`,
-                [
-                    this.name,
-                    this.body,
-                    this.thumbnailURL,
-                    this.news,
-                    this.authorid,
-                ]
+                [this.name, this.body, this.thumbnailURL, this.news, this.authorid]
             )
             .then((res) => {
                 this.id = res.rows[0].id
@@ -27,15 +21,15 @@ module.exports = class Article {
     }
 
     static getById(id) {
-        return db.query(`SELECT * FROM articles WHERE id = ?`, [id])
+        return db.query(`SELECT * FROM articles WHERE id = $1`, [id])
     }
 
     static getByName(name) {
-        return db.query(`SELECT * FROM articles WHERE name = ?`, [name])
+        return db.query(`SELECT * FROM articles WHERE name = $1`, [name])
     }
 
     static getNews() {
-        return db.query(`SELECT * FROM articles WHERE news = 1`)
+        return db.query(`SELECT * FROM articles WHERE news = true`)
     }
 
     static getAll() {

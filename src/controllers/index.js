@@ -5,17 +5,19 @@ exports.getIndex = (req, res, next) => {
 }
 
 exports.getAbout = (req, res, next) => {
-    Article.getByName('About Bagun Esports').then((rows) => {
+    // Article.getByName('About Bagun Esports').then((rows) => {
+    Article.getById(1).then((article) => {
         res.render('article', {
-            content: rows[0],
+            content: article.rows[0],
         })
     })
 }
 
 exports.getTOS = (req, res, next) => {
-    Article.getByName('Terms of Service').then((rows) => {
+    // Article.getByName('Terms of Service').then((rows) => {
+    Article.getById(2).then((article) => {
         res.render('article', {
-            content: rows[0],
+            content: article.rows[0],
         })
     })
 }
