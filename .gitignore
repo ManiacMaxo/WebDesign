@@ -1,20 +1,7 @@
-# Mac OSX
-.DS_Store
-
-# VS Code
-.vscode
-
-# Node.js
-node_modules
-
-# Old html files
-.html
-
-# Testing
-temp
-
-# Secret
-secret.json
-
-# Log
-*.log
+.idea/
+.vscode/
+node_modules/
+build/
+tmp/
+temp/
+ormconfig.json
