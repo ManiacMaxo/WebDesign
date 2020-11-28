@@ -18,7 +18,7 @@ export class Players extends BaseEntity {
     @Column()
     age: number
 
-    @OneToOne((type) => Games)
+    @OneToOne(() => Games)
     @JoinColumn()
     game: Games
 }

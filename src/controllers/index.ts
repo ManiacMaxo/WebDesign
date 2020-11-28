@@ -1,3 +1,6 @@
-export * as index from './root'
-export * as news from './news'
-export * as divisions from './divisions'
+import * as index from './root'
+import * as news from './news'
+import * as divisions from './divisions'
+import * as form from './form'
+
+export { index, news, divisions, form }

@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn, BaseEntity } from 'typeorm'
+import { Entity, PrimaryGeneratedColumn, Column, BaseEntity, BeforeInsert } from 'typeorm'
 
 @Entity()
 export class Games extends BaseEntity {
@@ -7,4 +7,12 @@ export class Games extends BaseEntity {
 
     @Column()
     name: string
+
+    @Column({ unique: true })
+    slug: string
+
+    @BeforeInsert()
+    slugify() {
+        this.slug = this.name.toLowerCase().split(' ').join('-')
+    }
 }

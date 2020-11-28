@@ -20,10 +20,10 @@ import * as routes from './routes'
 
 app.use('/static', express.static('public'))
 app.use(routes.root)
-// app.use(routes.form)
+app.use(routes.form)
 // app.use('/admin', routes.admin)
-// app.use('/news', routes.news)
-// app.use('/divisions', routes.dvisions)
+app.use('/news', routes.news)
+app.use('/divisions', routes.divisions)
 
 app.use((req: Request, res: Response, next) => {
     next(createHttpError(404))

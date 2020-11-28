@@ -15,7 +15,7 @@ export class Articles extends BaseEntity {
     @Column('text')
     body: string
 
-    @OneToOne((type) => Users)
+    @OneToOne(() => Users)
     @JoinColumn()
     author: Users
 }

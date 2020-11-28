@@ -1,12 +1,13 @@
 import { Router } from 'express'
 const router = Router()
+import { index } from '../controllers'
 
-router.get('/')
+router.get('/', index.getIndex)
 
-router.get('/shop')
+router.get('/about', index.getAbout)
 
-router.get('/about')
+router.get('/tos', index.getTOS)
 
-router.get('/tos')
+router.get('/shop', index.getShop)
 
 export { router as root }
