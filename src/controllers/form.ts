@@ -1,4 +1,6 @@
 import { Request, Response } from 'express'
+import { Application } from '../entity'
+import { getConnection, getRepository } from 'typeorm'
 
 export const getJoin = (req: Request, res: Response, next) => {
     const fields = [
@@ -36,4 +38,8 @@ export const getJoin = (req: Request, res: Response, next) => {
     res.render('form', { action: 'join', title: 'join bagun', fields: fields })
 }
 
-export const postJoin = (req: Request, res: Response, next) => {}
+export const postJoin = (req: Request, res: Response, next) => {
+    const application = new Application()
+
+    getConnection().getRepository(Application).save(application)
+}

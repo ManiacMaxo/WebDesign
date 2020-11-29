@@ -26,7 +26,7 @@
                             <% if (field.required) { %> required <% } %> />
                         <label><%= field.name %></label>
                     </div>
-                    <% }) if (title === 'register') { %>
+                    <% }) if (action === 'register') { %>
                     <span class="error" id="passerror">
                         <i class="fas fa-exclamation-circle"></i>
                         The passwords do not match

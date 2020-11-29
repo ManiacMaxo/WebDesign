@@ -1,7 +1,8 @@
-import { Entity, PrimaryGeneratedColumn, Column, BaseEntity, BeforeInsert } from 'typeorm'
+import { Entity, PrimaryGeneratedColumn, Column, BeforeInsert } from 'typeorm'
+import { Player } from '.'
 
-@Entity()
-export class Games extends BaseEntity {
+@Entity('games')
+export class Game {
     @PrimaryGeneratedColumn()
     id: number
 
