@@ -1,14 +1,24 @@
 #!/usr/bin/env node
 
 const debug = require('debug')('temp:server')
-const http = require('http')
-const db = require('./src/util/db')
-const app = require('./src/app')
+const db = require('./util/db')
+const app = require('./app')
 
 const port = process.env.port || 3000
 app.set('port', port)
 
+const http = require('http')
 const server = http.createServer(app)
+
+// const https = require('https')
+// const fs = require('fs')
+
+// const credentials = {
+//     key: fs.readFileSync('/etc/letsencrypt/live/gorchilov.net/privkey.pem'),
+//     cert: fs.readFileSync('/etc/letsencrypt/live/gorchilov.net/fullchain.pem'),
+// }
+
+// const server = https.createServer(credentials, app)
 
 db.connect().then(() => {
     console.log('connected')

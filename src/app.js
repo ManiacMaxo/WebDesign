@@ -13,7 +13,7 @@ app.use(logger('combined', { stream: accessLogStream }))
 app.use(logger('dev'))
 
 app.use(express.urlencoded({ extended: false }))
-app.use(express.static('public'))
+app.use(express.static(__dirname + '/../public'))
 
 const indexRoutes = require('./routes/index')
 const formRoutes = require('./routes/form')
@@ -21,7 +21,6 @@ const adminRoutes = require('./routes/admin')
 const newsRoutes = require('./routes/news')
 const divisionsRoutes = require('./routes/divisions')
 
-app.use('/static', express.static('public'))
 app.use(indexRoutes)
 app.use(formRoutes)
 app.use('/admin', adminRoutes)

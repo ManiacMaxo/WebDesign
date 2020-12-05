@@ -3,8 +3,8 @@
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
-        "start": "nodemon start index.js",
-        "dev": "sass --watch sass:public/css --style compressed"
+        "start": "nodemon start src/index.js",
+        "dev": "sass --watch src/sass:public/css --style compressed"
     },
     "repository": "https://github.com/ManiacMaxo/WebDesign",
     "author": "Victor <victor@gorchilov.com>",

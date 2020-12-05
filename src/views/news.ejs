@@ -3,7 +3,7 @@
     <head>
         <title>BAGUN | News</title>
         <%- include('static/head') %>
-        <link rel="stylesheet" href="/static/css/layouts/newscards.css" />
+        <link rel="stylesheet" href="/css/layouts/newscards.css" />
     </head>
     <body>
         <%- include('static/header') %>
@@ -16,9 +16,7 @@
                     </a>
                     <content>
                         <p><%= item.body.substring(0, 100) %>...</p>
-                        <a href="/news/<%= item.id %>" class="link">
-                            See more here
-                        </a>
+                        <a href="/news/<%= item.id %>" class="link"> See more here </a>
                     </content>
                 </section>
                 <% }) %>

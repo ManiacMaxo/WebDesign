@@ -34,10 +34,14 @@ module.exports = class Person {
     }
 
     static getByGame(game) {
-        return db.query(`SELECT * FROM people JOIN games USING (id) WHERE game = $1`, [game])
-    }
-
-    static getGames(id) {
-        return db.query(`SELECT * FROM games WHERE id = $1`, [id])
+        return db.query(
+            `SELECT people.name as name, picture, age, country, g.name as game FROM people
+            JOIN divisions d
+            ON people.id = d.player_id
+            JOIN games g
+            ON game_id = g.id
+            WHERE d.game_id = $1`,
+            [game]
+        )
     }
 }

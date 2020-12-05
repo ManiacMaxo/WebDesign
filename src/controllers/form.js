@@ -41,11 +41,9 @@ exports.getJoin = (req, res, next) => {
 
 exports.postJoin = (req, res, next) => {
     const { name, email, twitter, youtube, game, age } = req.body
-    Application(name, email, twitter, youtube, game, age)
-        .save()
-        .then(() => {
-            res.redirect('/')
-        })
+    new Application(name, email, twitter, youtube, game, age).save().then(() => {
+        res.redirect('/')
+    })
 }
 
 exports.getRegister = (req, res, next) => {

@@ -1,17 +1,16 @@
 const Person = require('../models/person')
 
 exports.getAllPlayers = (req, res, next) => {
-    Person.getAll().then((players) => {
-        res.render('division', { title: 'All', players: players.rows })
+    Person.getAll().then((result) => {
+        return res.render('division', { title: 'All', players: result.rows })
     })
 }
 
 exports.getByGame = (req, res, next) => {
     if (req.params.game === 'all') {
-        res.redirect('/divisions')
-        return
+        return res.redirect('/divisions')
     }
-    Person.getByGame(req.params.game).then((players) => {
-        res.render('division', { title: req.params.game, players: players.rows })
+    Person.getByGame(req.params.game).then((result) => {
+        return res.render('division', { title: result.rows[0].game, players: result.rows })
     })
 }

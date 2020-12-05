@@ -13,7 +13,7 @@ module.exports = class Application {
     save() {
         return db
             .query(
-                `INSERT INTO applications (name, email, twitter, youtube, game, age) VALUES ($1, $1, $1, $1, $1, $1) RETURNING id`,
+                `INSERT INTO applications (name, email, twitter, youtube, game, age) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id`,
                 [this.name, this.email, this.twitter, this.youtube, this.game, this.age]
             )
             .then((res) => {
