@@ -19,7 +19,17 @@ a
     color: inherit
 
 .invert
-    filter: invert(100%)
+    color: $black !important
+    background: $white !important
+
+    .link
+        border-color: $black !important
+        &:hover
+            background: $black !important
+            color: $white !important
+
+.no-scroll
+    overflow: hidden
 
 main // body
     margin-top: 4rem

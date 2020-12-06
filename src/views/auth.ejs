@@ -2,9 +2,9 @@
 <html lang="en">
     <head>
         <%- include('static/head') %>
-        <link rel="stylesheet" href="/static/css/layouts/form.css" />
+        <link rel="stylesheet" href="/css/layouts/form.css" />
         <% if (title === 'register') { %>
-        <script src="/static/js/pass.js" defer type="module"></script>
+        <script src="/js/pass.js" defer type="module"></script>
         <% } %>
     </head>
     <body>
@@ -23,7 +23,13 @@
                             placeholder="<%= field.name %>"
                             name="<%= field.name %>"
                             spellcheck="false"
-                            <% if (field.required) { %> required <% } %> />
+                            <%
+                            if
+                            (field.required)
+                            {
+                            %
+                        />
+                        required <% } %> />
                         <label><%= field.name %></label>
                     </div>
                     <% }) if (action === 'register') { %>

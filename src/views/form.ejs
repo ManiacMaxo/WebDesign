@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <%- include('static/head') %>
-        <link rel="stylesheet" href="/static/css/layouts/form.css" />
+        <link rel="stylesheet" href="/css/layouts/form.css" />
     </head>
     <body>
         <%- include('static/header') %>
@@ -14,13 +14,11 @@
                 <form action="<%= action %>" method="POST">
                     <% fields.forEach(field => { %>
                     <div class="form-group">
-                        <input
-                            type="<%= field.type %>"
-                            autocomplete="<%= field.name %>"
-                            placeholder="<%= field.name %>"
-                            name="<%= field.name %>"
-                            spellcheck="false"
-                            <% if (field.required) { %> required <% } %> />
+                        <input type="<%= field.type %>" autocomplete="<%=
+                        field.name %>" placeholder="<%= field.name %>" name="<%=
+                        field.name %>" spellcheck="false" <% if (field.required
+                        === true) { %> required <% } %> <% if (field.name ===
+                        'age') { %> min="1" <% } %> />
                         <label><%= field.name %></label>
                     </div>
                     <% }) %>

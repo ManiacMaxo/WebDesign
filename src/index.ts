@@ -1,13 +1,12 @@
 import 'reflect-metadata'
 import { createConnection } from 'typeorm'
 import debug from 'debug'
-import http from 'http'
 import { app } from './app'
-import { Game, Player } from './entity'
 
 const port = process.env.port || 3000
 app.set('port', port)
 
+import http from 'http'
 const server = http.createServer(app)
 
 createConnection()

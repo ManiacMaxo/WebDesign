@@ -22,9 +22,4 @@ export const getByGame = (req: Request, res: Response, next) => {
         .then((players) => {
             res.render('division', { title: 'title', players })
         })
-
-    // .find({ where: { game: { slug: req.params.game } } })
-    // .then((players) => {
-    //     res.render('division', { title: 'title', players })
-    // })
 }

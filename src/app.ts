@@ -2,10 +2,12 @@ import express from 'express'
 import { Request, Response } from 'express'
 import createHttpError from 'http-errors'
 import logger from 'morgan'
-import fs from 'fs'
+import { createWriteStream } from 'fs'
 
 const app = express()
-const accessLogStream = fs.createWriteStream('logs/access.log', { flags: 'a' })
+const accessLogStream = createWriteStream(__dirname + '/../logs/access.log', {
+    flags: 'a'
+})
 
 app.set('views', __dirname + '/views')
 app.set('view engine', 'ejs')
@@ -14,11 +16,10 @@ app.use(logger('combined', { stream: accessLogStream }))
 app.use(logger('dev'))
 
 app.use(express.urlencoded({ extended: false }))
-app.use(express.static('public'))
+app.use(express.static(__dirname + '/../public'))
 
 import * as routes from './routes'
 
-app.use('/static', express.static('public'))
 app.use(routes.root)
 app.use(routes.form)
 // app.use('/admin', routes.admin)
