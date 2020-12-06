@@ -8,6 +8,7 @@
         "@types/node": "^8.0.29",
         "sass": "^1.29.0",
         "ts-node": "3.3.0",
+        "ts-node-dev": "^1.0.0",
         "typescript": "3.3.3333"
     },
     "dependencies": {
@@ -25,6 +26,8 @@
         "typeorm": "0.2.29"
     },
     "scripts": {
-        "start": "ts-node src/index.ts"
+        "start": "ts-node src/index.ts",
+        "dev": "ts-node-dev --watch src/ src/index.ts",
+        "sass": "sass --watch src/sass:public/css --style compressed"
     }
 }
