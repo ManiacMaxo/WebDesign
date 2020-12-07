@@ -7,7 +7,3 @@ burger.addEventListener('click', () => {
     burger.classList.toggle('active')
     body.classList.toggle('no-scroll')
 })
-
-function capitalize(str) {
-    return str.charAt(0).toUpperCase() + str.slice(1)
-}

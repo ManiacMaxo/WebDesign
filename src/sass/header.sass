@@ -3,7 +3,7 @@
 .site-header
     position: fixed
     top: 0
-    height: 4rem
+    height: $height-header
     width: 100vw
     z-index: 10
     display: flex
@@ -77,7 +77,7 @@
         cursor: pointer
         transition: box-shadow 0.6s cubic-bezier(.79,.21,.06,.81)
         span
-            background-color: $white
+            background-color: $color-white
             width: 2.5rem
             height: 4px
             border-radius: 4px
@@ -109,10 +109,8 @@
         font-size: 8vw
 
 @media (max-width: 900px)
-    main
-        margin-top: 6rem
     .site-header
-        height: 6rem
+        height: $mobile-height-header
         grid-template-columns: 5% 10% auto 10% 5%
         .burger
             display: flex

@@ -1,4 +1,11 @@
-import { Entity, PrimaryGeneratedColumn, Column, JoinTable, ManyToMany } from 'typeorm'
+import {
+    Entity,
+    PrimaryGeneratedColumn,
+    Column,
+    JoinTable,
+    ManyToMany,
+    BeforeInsert
+} from 'typeorm'
 import { Game } from './Game'
 
 @Entity('players')
@@ -20,6 +27,14 @@ export class Player {
 
     @Column()
     age: number
+
+    @Column({ unique: true })
+    slug: string
+
+    @BeforeInsert()
+    slugify() {
+        this.slug = this.name.toLowerCase().split(' ').join('-')
+    }
 
     @ManyToMany(() => Game)
     @JoinTable()

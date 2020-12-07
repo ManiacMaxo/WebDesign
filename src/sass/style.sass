@@ -5,8 +5,8 @@
     box-sizing: border-box
 
 body
-    background: $black
-    color: $white
+    background: $color-black
+    color: $color-white
     font-family: 'Oxygen', sans-serif
     margin: 0
     font-size: 1.25rem
@@ -19,34 +19,36 @@ a
     color: inherit
 
 .invert
-    color: $black !important
-    background: $white !important
+    color: $color-black !important
+    background: $color-white !important
 
     .link
-        border-color: $black !important
+        border-color: $color-black !important
         &:hover
-            background: $black !important
-            color: $white !important
+            background: $color-black !important
+            color: $color-white !important
 
 .no-scroll
     overflow: hidden
 
 main // body
-    margin-top: 4rem
+    margin-top: $height-header
     padding: 0 10%
-    color: $white
-    min-height: calc(85vh - 6rem) // sticky footer - margin
+    color: $color-white
+    min-height: calc(100vh - #{$height-header} - #{$height-footer})
 
 @media (max-width: 900px)
     main
-        min-height: calc(85vh - 8rem)
+        margin-top: $mobile-height-header
+        padding: 0
+        min-height: calc(100vh - #{$mobile-height-header} - #{$mobile-height-footer})
 
 .link // button-like link
-    border: 2px solid $white
+    border: 2px solid $color-white
     background: transparent
     font-size: 0.75rem
     padding: 0.2rem 0.5rem
     transition: 0.3s
     &:hover
-        background: $white
-        color: $black
+        background: $color-white
+        color: $color-black

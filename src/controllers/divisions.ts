@@ -12,7 +12,6 @@ export const getAll = (req: Request, res: Response, next) => {
 }
 
 export const getByGame = (req: Request, res: Response, next) => {
-    console.log(req.params.game)
     getConnection()
         .getRepository(Player)
         .createQueryBuilder('players')
@@ -20,6 +19,16 @@ export const getByGame = (req: Request, res: Response, next) => {
         .where('game.slug = :slug', { slug: req.params.game })
         .getMany()
         .then((players) => {
-            res.render('division', { title: 'title', players })
+            try {
+                res.render('division', {
+                    title: players[0].games[0].name,
+                    players
+                })
+            } catch (err) {
+                res.render('division', {
+                    title: 'No players found',
+                    players: []
+                })
+            }
         })
 }

@@ -2,17 +2,28 @@
 
 .footer
     display: flex
-    background: $black
-    height: 15vh
-    color: $gold
+    background: $color-black
+    padding: 0.5rem 10%
+    height: $height-footer
+    color: $color-gold
     font-size: 1rem
-    margin: 1rem
-    flex-flow: column wrap
+    flex-direction: row
     align-items: center
-    justify-content: center
+    justify-content: space-between
+    div
+        display: flex
+        flex-flow: row wrap
+        justify-content: space-between
+        min-width: 50%
+        a
+            margin: 0 0.5rem
 
-@media (max-width: 500px)
+
+@media (max-width: 900px)
     .footer
-        flex-flow: column nowrap
-        height: 20vh
-        margin: 1rem 0 3rem
+        height: $mobile-height-footer
+        flex-direction: column
+        justify-content: space-around
+        div
+            justify-content: center
+            align-items: center

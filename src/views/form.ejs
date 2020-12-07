@@ -14,11 +14,15 @@
                 <form action="<%= action %>" method="POST">
                     <% fields.forEach(field => { %>
                     <div class="form-group">
-                        <input type="<%= field.type %>" autocomplete="<%=
-                        field.name %>" placeholder="<%= field.name %>" name="<%=
-                        field.name %>" spellcheck="false" <% if (field.required
-                        === true) { %> required <% } %> <% if (field.name ===
-                        'age') { %> min="1" <% } %> />
+                        <input 
+                            type="<%= field.type %>" 
+                            autocomplete="<%= field.name %>" 
+                            placeholder="<%= field.name %>" 
+                            name="<%= field.name %>" 
+                            spellcheck="false"
+                            <% if (field.name === 'age') { %> min="1" <% } %>
+                            <% if (field.required === true) { %> required <% } %> 
+                        />
                         <label><%= field.name %></label>
                     </div>
                     <% }) %>

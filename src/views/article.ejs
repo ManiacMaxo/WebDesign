@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>BAGUN | <%= content.name %></title>
+        <title>BAGUN | <%= content.title %></title>
         <%- include('static/head') %>
         <link rel="stylesheet" href="/css/layouts/text.css" />
     </head>
@@ -9,7 +9,7 @@
         <%- include('static/header') %>
         <main>
             <div class="big-text">
-                <h1><%= content.name %></h1>
+                <h1><%= content.title %></h1>
                 <% content.body.split('\n').forEach(paragraph => { %>
                 <p><%= paragraph %></p>
                 <% }) %>
