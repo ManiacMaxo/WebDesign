@@ -1,45 +1,60 @@
 import { Request, Response } from 'express'
 import { Application } from '../entity'
-import { getConnection, getRepository } from 'typeorm'
+import { getConnection } from 'typeorm'
 
 export const getJoin = (req: Request, res: Response, next) => {
     const fields = [
         {
             name: 'name',
-            required: true,
-            type: 'text',
+            type: 'text'
         },
         {
             name: 'email',
-            required: true,
-            type: 'email',
+            type: 'email'
         },
         {
             name: 'twitter',
-            type: 'text',
+            type: 'text'
         },
         {
             name: 'youtube',
-            required: true,
-            type: 'text',
+            type: 'text'
         },
         {
             name: 'game',
-            required: true,
-            type: 'text',
+            type: 'text'
         },
         {
             name: 'age',
-            required: true,
-            type: 'number',
-        },
+            type: 'number'
+        }
     ]
 
-    res.render('form', { action: 'join', title: 'join bagun', fields: fields })
+    res.render('form', { title: 'join bagun', fields: fields })
 }
 
 export const postJoin = (req: Request, res: Response, next) => {
     const application = new Application()
 
-    getConnection().getRepository(Application).save(application)
+    application.name = req.body.name
+    application.email = req.body.email
+    application.twitter = req.body.twitter
+    application.youtube = req.body.youtube
+    application.game = req.body.game
+    application.age = req.body.age
+
+    try {
+        const repo = getConnection().getRepository(Application)
+        repo.findOne({ where: { email: application.email } }).then((r) => {
+            if (!r) {
+                repo.save(application)
+                res.redirect('/')
+            } else {
+                res.redirect('/join?exists=true')
+            }
+        })
+    } catch (e) {
+        console.log(e)
+        res.redirect('/')
+    }
 }

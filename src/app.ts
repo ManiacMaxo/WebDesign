@@ -22,7 +22,7 @@ import * as routes from './routes'
 
 app.use(routes.root)
 app.use(routes.form)
-// app.use('/admin', routes.admin)
+app.use('/admin', routes.admin)
 app.use('/news', routes.news)
 app.use('/divisions', routes.divisions)
 
@@ -38,4 +38,4 @@ app.use((err, req: Request, res: Response, next) => {
     res.render('error')
 })
 
-export { app }
+export default app

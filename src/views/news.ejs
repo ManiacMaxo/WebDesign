@@ -3,7 +3,12 @@
     <head>
         <title>BAGUN | News</title>
         <%- include('static/head') %>
-        <link rel="stylesheet" href="/css/layouts/newscards.css" />
+        <link
+            rel="stylesheet"
+            href="/css/layouts/newscards.css"
+            media="print"
+            onload="this.media='all'"
+        />
     </head>
     <body>
         <%- include('static/header') %>
@@ -12,7 +17,7 @@
                 <% news.forEach(item => { %>
                 <section>
                     <a href="/news/<%= item.id %>">
-                        <h1><%= item.name %></h1>
+                        <h1><%= item.title %></h1>
                     </a>
                     <content>
                         <p><%= item.body.substring(0, 100) %>...</p>

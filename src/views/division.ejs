@@ -3,7 +3,12 @@
     <head>
         <title><%= title %> | BAGUN</title>
         <%- include('static/head') %>
-        <link rel="stylesheet" href="/css/layouts/snake.css" />
+        <link
+            rel="stylesheet"
+            href="/css/layouts/snake.css"
+            media="print"
+            onload="this.media='all'"
+        />
     </head>
     <body>
         <%- include('static/header') %>
@@ -12,10 +17,13 @@
                 <% players.forEach(player => { %>
                 <section>
                     <header>
-                        <img src="<%= player.picture %>" />
+                        <img
+                            src="<%= player.picture %>"
+                            alt="<%= player.name %>'s picture"
+                        />
                     </header>
                     <div class="content">
-                        <a href="<%= player.id %>">
+                        <a href="/divisions/players/<%= player.slug %>">
                             <h2><%= player.name %></h2>
                         </a>
                         <span><%= player.age %>, <%= player.country %></span>

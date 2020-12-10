@@ -31,6 +31,12 @@ a
 .no-scroll
     overflow: hidden
 
+.display-none
+    display: none !important
+
+.hidden
+    transform: translateX(100vw)
+
 main // body
     margin-top: $height-header
     padding: 0 10%
@@ -40,7 +46,6 @@ main // body
 @media (max-width: 900px)
     main
         margin-top: $mobile-height-header
-        padding: 0
         min-height: calc(100vh - #{$mobile-height-header} - #{$mobile-height-footer})
 
 .link // button-like link

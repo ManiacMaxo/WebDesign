@@ -87,8 +87,17 @@
         span:nth-child(2)
             transform-origin: 50% 50%
 
-.hidden
-    transform: translateX(100vw)
+.burger-menu-folder
+    outline: none
+    border: none
+    background: transparent
+    color: $color-white
+    cursor: pointer
+    font-size: 8vw
+    padding: 0
+    font-weight: 400
+    &::after
+        content: '>'
 
 .burger-menu-wrapper
     height: calc(100vh - 6rem)
@@ -97,7 +106,7 @@
     z-index: 1
     top: 6rem
     left: 0
-    transition: 0.3s
+    transition: 0.2s
     display: flex
     @include blurred
     .burger-menu

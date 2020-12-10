@@ -2,7 +2,13 @@
 <html lang="en">
     <head>
         <%- include('static/head') %>
-        <link rel="stylesheet" href="/css/layouts/form.css" />
+        <link
+            rel="stylesheet"
+            href="/css/layouts/form.css"
+            media="print"
+            onload="this.media='all'"
+        />
+        <script src="/js/form.js" defer type="module"></script>
     </head>
     <body>
         <%- include('static/header') %>
@@ -11,21 +17,20 @@
                 <header>
                     <h1><%= title %></h1>
                 </header>
-                <form action="<%= action %>" method="POST">
+                <form action="/join" method="POST">
                     <% fields.forEach(field => { %>
                     <div class="form-group">
                         <input 
                             type="<%= field.type %>" 
+                            name="<%= field.name %>" 
                             autocomplete="<%= field.name %>" 
                             placeholder="<%= field.name %>" 
-                            name="<%= field.name %>" 
-                            spellcheck="false"
                             <% if (field.name === 'age') { %> min="1" <% } %>
-                            <% if (field.required === true) { %> required <% } %> 
                         />
                         <label><%= field.name %></label>
                     </div>
                     <% }) %>
+                    <span class="error-message"></span>
                     <div class="form-group">
                         <button type="submit" id="submit"><%= title %></button>
                     </div>

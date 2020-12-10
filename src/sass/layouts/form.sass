@@ -13,8 +13,8 @@ form
     .form-group
         position: relative
         padding: 1rem 0 0
-        margin: 1rem 0
-        width: 50%
+        margin: 0.5rem 0
+        width: 40%
         max-width: 800px
         input
             font-family: inherit
@@ -45,15 +45,14 @@ form
             padding-bottom: 6px
             font-weight: 700
             border-width: 0 0 3px 0
-            border-image: $rainbow
-            border-image-slice: 1
+            border-color: $color-gold
             ~ label
                 position: absolute
                 top: 0
                 display: block
                 transition: 0.2s
                 font-size: 1rem
-                color: #f79533
+                color: $color-gold
                 font-weight: 700
         button
             background: transparent
@@ -63,17 +62,18 @@ form
             color: $color-white
             width: 100%
             &:hover:enabled, &:focus:enabled
-                background: $rainbow
+                background: $color-white
+                color: $color-black
                 outline: none
                 cursor: pointer
             &:disabled
                 color: #8b8b8b
                 border-color: #8b8b8b
-    .error
-        display: none
+
+    .error-message
         color: red
-        margin-bottom: 1rem
-        font-size: 1rem
+        font-weight: bold
+
 
 @media (max-width: 700px)
     form .form-group

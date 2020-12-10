@@ -1,8 +1,9 @@
 import { Article } from '../entity'
 import { Request, Response } from 'express'
+import { getConnection } from 'typeorm'
 
-export const getAll = (connection, req: Request, res: Response, next) => {
-    connection
+export const getAll = (req: Request, res: Response, next) => {
+    getConnection()
         .getRepository(Article)
         .find()
         .then((articles) => {
@@ -10,8 +11,8 @@ export const getAll = (connection, req: Request, res: Response, next) => {
         })
 }
 
-export const getOne = (connection, req: Request, res: Response, next) => {
-    connection
+export const getOne = (req: Request, res: Response, next) => {
+    getConnection()
         .getRepository(Article)
         .findOne(req.params.id)
         .then((article) => {

@@ -6,7 +6,7 @@ export class Article {
     @PrimaryGeneratedColumn()
     id: number
 
-    @Column()
+    @Column({ nullable: true })
     thumbnail: string
 
     @Column({ length: 64 })

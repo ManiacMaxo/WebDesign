@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../../../src/sass/layouts/newscards.sass","../../../src/sass/_const.sass"],"names":[],"mappings":"AAEA,YACI,aACA,mCACA,oBACI,cACA,aACA,WACA,kBACA,kBACA,aACA,sBAEA,MCdM,QDeN,WCdM,KDeN,4BACA,6BACA,mBACA,2BACI,WACA,kBACA,MACA,QACA,SACA,OACA,WACA,YACA,sBACA","file":"newscards.css"}
+{"version":3,"sourceRoot":"","sources":["../../../src/sass/layouts/newscards.sass","../../../src/sass/_const.sass"],"names":[],"mappings":"AAEA,YACI,aACA,mCACA,oBACI,cACA,aACA,WACA,kBACA,kBACA,aACA,sBACA,MCbM,QDcN,WCbM,KDcN,4BACA,yBACA","file":"newscards.css"}

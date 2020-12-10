@@ -3,7 +3,12 @@
     <head>
         <title>BAGUN | <%= content.title %></title>
         <%- include('static/head') %>
-        <link rel="stylesheet" href="/css/layouts/text.css" />
+        <link
+            rel="stylesheet"
+            href="/css/layouts/text.css"
+            media="print"
+            onload="this.media='all'"
+        />
     </head>
     <body>
         <%- include('static/header') %>

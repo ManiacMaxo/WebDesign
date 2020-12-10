@@ -2,7 +2,12 @@
 <html lang="en">
     <head>
         <%- include('static/head') %>
-        <link rel="stylesheet" href="/css/layouts/chain.css" />
+        <link
+            rel="stylesheet"
+            href="/css/layouts/chain.css"
+            media="print"
+            onload="this.media='all'"
+        />
     </head>
     <body>
         <%- include('static/header') %>

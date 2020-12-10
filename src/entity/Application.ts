@@ -8,7 +8,7 @@ export class Application {
     @Column({ length: 32 })
     name: string
 
-    @Column({ length: 64 })
+    @Column({ length: 64, unique: true })
     email: string
 
     @Column({ length: 64 })

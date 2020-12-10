@@ -33,18 +33,25 @@
         </div>
 
         <!-- Mobile header -->
-        <button class="btn burger">
+        <button class="btn burger" aria-label="mobile menu">
             <span></span>
             <span></span>
             <span></span>
         </button>
     </div>
-    <div class="burger-menu-wrapper hidden">
+    <div class="burger-menu-wrapper hidden display-none">
         <ul class="burger-menu">
             <li><a href="/">Home</a></li>
-            <li><a href="news">News</a></li>
+            <li><a href="/news">News</a></li>
             <li><a href="/join">Join BAGUN</a></li>
-            <li><button class="burger-menu-folder">Divisions</button></li>
+            <li>
+                <button
+                    class="burger-menu-folder"
+                    aria-label="mobile menu dropdown"
+                >
+                    Divisions
+                </button>
+            </li>
             <li><a href="/about">About</a></li>
         </ul>
     </div>

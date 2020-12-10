@@ -6,3 +6,4 @@ tmp/
 temp/
 ormconfig.json
 logs/
+.DS_Store
