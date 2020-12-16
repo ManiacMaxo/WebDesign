@@ -1,0 +1,36 @@
+@import 'const';
+
+.global-footer {
+    display: flex;
+    padding: 0 $gutter;
+    background: $color-black;
+    height: $footer-height;
+    color: $color-gold;
+    font-size: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    span {
+        width: fit-content;
+    }
+    div {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 250px;
+        a {
+            margin: 0 0.5rem;
+        }
+    }
+}
+
+@media (max-width: $mobile-width) {
+    .global-footer {
+        height: $mobile-footer-height;
+        justify-content: space-evenly;
+        flex-direction: column;
+        div {
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

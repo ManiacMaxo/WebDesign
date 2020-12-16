@@ -1,0 +1,16 @@
+<div class="<%= 'input-group ' + input.style %>">
+    <input
+        type="<%= input.type %>"
+        name="<%= input.name %>"
+        placeholder="<%= input.placeholder %>"
+        autocomplete="<%= input.name %>"
+        <% if (input.required) { %>
+            required
+        <% } %> 
+        <% if (input.name === "age") { %>
+            min="1"
+            max="99"
+        <% } %>
+    />
+    <label for="<%= input.name %>"><%= input.name %></label>
+</div>

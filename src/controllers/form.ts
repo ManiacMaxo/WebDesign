@@ -1,36 +1,19 @@
 import { Request, Response } from 'express'
 import { Application } from '../entity'
+import { Input } from '../utils'
 import { getConnection } from 'typeorm'
 
 export const getJoin = (req: Request, res: Response, next) => {
     const fields = [
-        {
-            name: 'name',
-            type: 'text'
-        },
-        {
-            name: 'email',
-            type: 'email'
-        },
-        {
-            name: 'twitter',
-            type: 'text'
-        },
-        {
-            name: 'youtube',
-            type: 'text'
-        },
-        {
-            name: 'game',
-            type: 'text'
-        },
-        {
-            name: 'age',
-            type: 'number'
-        }
+        new Input('name', 'text'),
+        new Input('game', 'text', null, 'small left'),
+        new Input('age', 'number', null, 'small right'),
+        new Input('email', 'email', 'email address'),
+        new Input('youtube', 'youtube', null, '', false),
+        new Input('twitter', 'text', null, '', false)
     ]
-
-    res.render('form', { title: 'join bagun', fields: fields })
+    // console.log(fields)
+    res.render('form', { title: 'Join BAGUN | BAGUN Esports', fields })
 }
 
 export const postJoin = (req: Request, res: Response, next) => {

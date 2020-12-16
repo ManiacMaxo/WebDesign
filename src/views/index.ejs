@@ -1,44 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <%- include('static/head') %>
-        <link
-            rel="stylesheet"
-            href="/css/layouts/chain.css"
-            media="print"
-            onload="this.media='all'"
-        />
+        <%- include('static/head', {title: 'Welcome | BAGUN Esports'}) %>
     </head>
     <body>
         <%- include('static/header') %>
-        <main>
-            <div class="chain">
-                <article style="background-image: url(assets/siege.webp)">
-                    <header>
-                        <h1>
-                            <a href="divisions/rainbow-6-siege">
-                                Rainbow Six Team
-                            </a>
-                        </h1>
-                    </header>
-                </article>
-                <article class="invert small">
-                    <header><h1>What is Bagun?</h1></header>
-                    <div>
-                        <p>
-                            an esports organization made by a couple of friends
-                            that aren't the best but strive to be
-                        </p>
-                        <a href="about" class="link"> See more here </a>
-                    </div>
-                </article>
-                <article style="background-image: url(assets/destiny.webp)">
-                    <header>
-                        <h1><a href="divisions/destiny">Destiny Team</a></h1>
-                    </header>
-                </article>
-            </div>
-        </main>
+        <main></main>
         <%- include('static/footer') %>
     </body>
 </html>

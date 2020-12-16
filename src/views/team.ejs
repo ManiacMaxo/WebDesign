@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('static/head', {title: 'Welcome | BAGUN Esports'}) %>
+        <link rel="stylesheet" href="/css/team.css" />
+    </head>
+    <body>
+        <%- include('static/header') %>
+        <main>
+            <content>
+                <% players.forEach(player => { %>
+                    <%- include('components/card', { player }) %>
+                <% }) %> 
+            </content>
+        </main>
+        <%- include('static/footer') %>
+    </body>
+</html>

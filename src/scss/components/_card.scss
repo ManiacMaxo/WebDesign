@@ -1,0 +1,135 @@
+@import '../static/const';
+
+$card-width: 350px;
+$card-height: 450px;
+$h-color: #9cc9e3;
+$txt-color: #dce3e7;
+
+.card {
+    width: $card-width;
+    height: $card-height;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: auto $card-height;
+    background-position: center;
+    color: $color-white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    .color-overlay {
+        border-radius: 10px;
+        z-index: 1;
+        background: rgba(82, 82, 82, 0.2);
+        width: $card-width;
+        height: $card-height;
+        position: absolute;
+        transition: background 0.3s cubic-bezier(0.33, 0.66, 0.66, 1);
+    }
+    .gradient-overlay {
+        border-radius: 10px;
+        z-index: 1;
+        position: absolute;
+        background-image: -webkit-linear-gradient(
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0.6) 21%
+        );
+        background-image: -moz-linear-gradient(
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0.6) 21%
+        );
+        background-image: -o-linear-gradient(
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0.6) 21%
+        );
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0.6) 21%
+        );
+        width: $card-width;
+        height: $card-height;
+    }
+
+    &:hover {
+        .card-info {
+            opacity: 1;
+            bottom: 120px;
+        }
+        .color-overlay {
+            background: rgba(235, 191, 46, 0.4);
+        }
+    }
+    header {
+        text-align: center;
+        margin: 70px 0 0 0;
+        width: 100%;
+        z-index: 2;
+    }
+    h3 {
+        size: 20px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        margin-bottom: 0;
+    }
+    hr {
+        width: 50px;
+        height: 3px;
+        margin: 20px auto;
+        border: 0;
+        background: $color-gold;
+    }
+    .intro {
+        width: 170px;
+        margin: 0 auto;
+        font-size: 13px;
+        font-style: italic;
+        line-height: 18px;
+    }
+    .card-info {
+        z-index: 2;
+
+        width: 100%;
+        bottom: 100px;
+        padding: 0 50px;
+        opacity: 0;
+        transition: bottom 0.3s, opacity 0.3s cubic-bezier(0.33, 0.66, 0.66, 1);
+    }
+
+    footer {
+        z-index: 2;
+        width: 100%;
+        padding: 1rem 2rem;
+        ul {
+            width: 100%;
+            display: flex;
+
+            li {
+                &:first-child {
+                    margin-right: 0.3rem;
+                }
+                &:not(:first-child):not(:last-child) {
+                    margin-left: 0.3rem;
+                    margin-right: 0.3rem;
+                }
+                &:last-child {
+                    margin-left: 0.3rem;
+                }
+            }
+
+            .age::before {
+                @include fa-content-solid('\f1fd');
+                font-size: 12px;
+            }
+
+            .country::before {
+                @include fa-content-solid('\f0ac');
+                font-size: 12px;
+            }
+        }
+    }
+}

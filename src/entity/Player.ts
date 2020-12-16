@@ -16,6 +16,9 @@ export class Player {
     @Column({ length: 32 })
     name: string
 
+    @Column({ length: 16, nullable: true })
+    position: string
+
     @Column('text')
     description: string
 

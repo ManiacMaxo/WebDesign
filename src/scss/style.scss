@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+@import 'static/const';
+@import 'fontawesome/solid';
+@import 'fontawesome';
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: 0;
+    font-size: 1rem;
+}
+
+body {
+    font-family: 'Oxygen', sans-serif;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+main {
+    margin-top: $header-height;
+    padding: 0 $gutter;
+    min-height: calc(100vh - #{$header-height} - #{$footer-height});
+}
+
+@media (max-width: $mobile-width) {
+    main {
+        min-height: calc(
+            100vh - #{$mobile-header-height} - #{$mobile-footer-height}
+        );
+        margin-top: $mobile-header-height;
+    }
+}
+
+.button {
+    color: $color-black;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 1rem;
+    border: 1px solid $color-medium-grey;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+    cursor: pointer;
+
+    &:hover {
+        color: #ffffff;
+        background: $color-gold;
+        border-color: $color-gold;
+        transition: all 0.4s ease 0s;
+    }
+}

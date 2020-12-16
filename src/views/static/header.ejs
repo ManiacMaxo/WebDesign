@@ -1,58 +1,38 @@
-<header class="site-header">
-    <div class="logo">
-        <a href="/">
-            <img src="/assets/cat.svg" alt="Bagun" />
+<header class="global-header">
+    <div class="left">
+        <a href="/" class="logo">
+            <img src="/assets/cat.svg" alt="logo home" />
         </a>
-    </div>
-    <!-- Routes -->
-    <ul class="header-routes">
-        <li><a href="/">Home</a></li>
-        <li>
-            <a href="/news">News</a>
-        </li>
-        <li><a href="/join">Join BAGUN</a></li>
-        <li class="dropdown">
-            Divisions
-            <ul class="dropdown-content">
-                <li><a href="/divisions">All players</a></li>
-                <li><a href="/divisions/valorant">Valorant</a></li>
-                <li>
-                    <a href="/divisions/rainbow-6-siege">Rainbow 6: Siege</a>
-                </li>
-                <li><a href="/divisions/destiny">Destiny</a></li>
-                <li>
-                    <a href="/divisions/league-of-legends">League of Legends</a>
-                </li>
-            </ul>
-        </li>
-        <li><a href="/about">About</a></li>
-    </ul>
-    <div class="header-end">
-        <div class="link">
-            <a href="/shop">Shop</a>
-        </div>
-
-        <!-- Mobile header -->
-        <button class="btn burger" aria-label="mobile menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </div>
-    <div class="burger-menu-wrapper hidden display-none">
-        <ul class="burger-menu">
-            <li><a href="/">Home</a></li>
-            <li><a href="/news">News</a></li>
-            <li><a href="/join">Join BAGUN</a></li>
-            <li>
-                <button
-                    class="burger-menu-folder"
-                    aria-label="mobile menu dropdown"
-                >
-                    Divisions
-                </button>
+        <ul class="routes">
+            <li><a href="/news">news</a></li>
+            <li class="dropdown">
+                <span>teams <i class="fas fa-angle-down"></i></span>
+                <div class="dropdown-menu hidden">
+                    <a href="/team/rainbow-6-siege">
+                        <img src="/assets/siege.webp" alt="" />
+                        Rainbow 6: Siege</a
+                    >
+                    <a href="/team/valorant">
+                        <img src="/assets/valorant.webp" alt="" />
+                        Valorant</a
+                    >
+                    <a href="/team/destiny">
+                        <img src="/assets/destiny.webp" alt="" />
+                        Destiny</a
+                    >
+                    <a href="/team/league-of-legends">
+                        <img src="/assets/league.webp" alt="" />
+                        League of Legends</a
+                    >
+                </div>
             </li>
-            <li><a href="/about">About</a></li>
+            <li><a href="/join">join bagun</a></li>
+            <li><a href="/about">about</a></li>
         </ul>
+    </div>
+    <div class="right">
+        <a href="#">
+            <i class="fas fa-shopping-bag"></i>
+        </a>
     </div>
 </header>

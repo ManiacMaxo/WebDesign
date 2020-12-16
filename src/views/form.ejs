@@ -1,41 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <%- include('static/head') %>
-        <link
-            rel="stylesheet"
-            href="/css/layouts/form.css"
-            media="print"
-            onload="this.media='all'"
-        />
-        <script src="/js/form.js" defer type="module"></script>
+        <%- include('static/head', { title }) %>
+        <link rel="stylesheet" href="/css/form.css" />
+        <script defer src="/js/form.js"></script>
     </head>
     <body>
         <%- include('static/header') %>
         <main>
-            <div class="form">
-                <header>
-                    <h1><%= title %></h1>
-                </header>
-                <form action="/join" method="POST">
-                    <% fields.forEach(field => { %>
-                    <div class="form-group">
-                        <input 
-                            type="<%= field.type %>" 
-                            name="<%= field.name %>" 
-                            autocomplete="<%= field.name %>" 
-                            placeholder="<%= field.name %>" 
-                            <% if (field.name === 'age') { %> min="1" <% } %>
-                        />
-                        <label><%= field.name %></label>
-                    </div>
-                    <% }) %>
-                    <span class="error-message"></span>
-                    <div class="form-group">
-                        <button type="submit" id="submit"><%= title %></button>
-                    </div>
-                </form>
-            </div>
+            <form action="" method="post" class="form">
+                <h1>Join BAGUN</h1>
+                <% fields.forEach((input) => { %>
+                    <%- include('components/input', { input }) %> 
+                <% }) %>
+                <button type="submit" class="submit button">Send</button>
+            </form>
         </main>
         <%- include('static/footer') %>
     </body>

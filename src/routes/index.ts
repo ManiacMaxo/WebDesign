@@ -1,5 +1,5 @@
 export { root } from './root'
 export { news } from './news'
-export { divisions } from './divisions'
+export { teams } from './teams'
 export { form } from './form'
 export { admin } from './admin'

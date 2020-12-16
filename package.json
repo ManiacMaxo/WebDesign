@@ -28,6 +28,6 @@
     "scripts": {
         "start": "ts-node src/index.ts",
         "dev": "ts-node-dev --watch . src/index.ts",
-        "sass": "sass --watch src/sass:public/css --style compressed"
+        "sass": "sass --watch src/scss/:public/css --style compressed"
     }
 }

@@ -9,4 +9,15 @@ if (exists === 'true') {
     error.innerText = `An application like this already exists`
 }
 
-form.addEventListener('submit', (event) => {})
+form.addEventListener('submit', (event) => {
+    event.preventDefault()
+    const inputs = document.querySelectorAll('form > .input-group > input')
+    inputs.forEach((input) => {
+        console.log(input.value, input.name)
+        // switch (input.name) {
+        //     case 'name':
+        //         if (input.value.length() < 0) {
+        //         }
+        // }
+    })
+})
