@@ -2,6 +2,7 @@ import { Request, Response } from 'express'
 import { Application } from '../entity'
 import { Input } from '../utils'
 import { getConnection } from 'typeorm'
+import { validationResult } from 'express-validator'
 
 export const getJoin = (req: Request, res: Response, next) => {
     const fields = [
@@ -12,19 +13,23 @@ export const getJoin = (req: Request, res: Response, next) => {
         new Input('youtube', 'youtube', null, '', false),
         new Input('twitter', 'text', null, '', false)
     ]
-    // console.log(fields)
-    res.render('form', { title: 'Join BAGUN | BAGUN Esports', fields })
+    return res.render('form', { title: 'Join BAGUN | BAGUN Esports', fields })
 }
 
 export const postJoin = (req: Request, res: Response, next) => {
+    const errors = validationResult(req)
+    if (!errors.isEmpty()) {
+        return res.redirect('/join?err=incorrect')
+    }
+
     const application = new Application()
 
     application.name = req.body.name
+    application.game = req.body.game
+    application.age = req.body.age
     application.email = req.body.email
     application.twitter = req.body.twitter
     application.youtube = req.body.youtube
-    application.game = req.body.game
-    application.age = req.body.age
 
     try {
         const repo = getConnection().getRepository(Application)
@@ -33,11 +38,11 @@ export const postJoin = (req: Request, res: Response, next) => {
                 repo.save(application)
                 res.redirect('/')
             } else {
-                res.redirect('/join?exists=true')
+                res.redirect('/join?err=exists')
             }
         })
     } catch (e) {
         console.log(e)
-        res.redirect('/')
+        res.status(500)
     }
 }

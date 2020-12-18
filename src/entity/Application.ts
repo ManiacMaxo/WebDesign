@@ -8,6 +8,12 @@ export class Application {
     @Column({ length: 32 })
     name: string
 
+    @Column({ length: 32 })
+    game: string
+
+    @Column()
+    age: number
+
     @Column({ length: 64, unique: true })
     email: string
 
@@ -16,10 +22,4 @@ export class Application {
 
     @Column({ length: 64 })
     youtube: string
-
-    @Column({ length: 32 })
-    game: string
-
-    @Column()
-    age: number
 }

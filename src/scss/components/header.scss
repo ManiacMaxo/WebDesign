@@ -1,4 +1,4 @@
-@import 'const';
+@import '../const';
 $border-thickness: 2px;
 
 .global-header {
@@ -13,6 +13,7 @@ $border-thickness: 2px;
     display: flex;
     padding: 0 $gutter;
     justify-content: space-between;
+
     .left,
     .right {
         display: flex;
@@ -25,7 +26,7 @@ $border-thickness: 2px;
             z-index: 11;
             width: auto;
             height: 110%;
-            transform: translateY(0.5rem);
+            @include transform(translateY(0.5rem));
             margin-right: 2rem;
             * {
                 height: 100%;
@@ -45,15 +46,14 @@ $border-thickness: 2px;
                     cursor: pointer;
                     user-select: none;
                     .fa-angle-down {
-                        -moz-transition: all 0.15s linear;
-                        -webkit-transition: all 0.15s linear;
                         transition: all 0.15s linear;
                         &.down {
-                            -moz-transform: rotate(180deg);
-                            -webkit-transform: rotate(180deg);
-                            transform: rotate(180deg);
+                            @include transform(rotate(180deg));
                         }
                     }
+                }
+                .translate-100 {
+                    @include transform(translateY(-100vh));
                 }
 
                 &-menu {
@@ -68,6 +68,8 @@ $border-thickness: 2px;
                     justify-content: space-evenly;
                     align-items: center;
                     text-transform: none;
+                    transition: all 0.2s ease-in-out;
+
                     a {
                         font-size: 13px;
                         display: flex;
@@ -76,19 +78,16 @@ $border-thickness: 2px;
                         img {
                             position: relative;
                             height: 200px;
-                            width: auto;
+                            width: 150px;
                             filter: grayscale(100%);
                             transition: all 0.2s linear;
+                            border-radius: 5px;
 
                             &:hover {
                                 filter: none;
-                                transition: all 0.2s linear;
                             }
                         }
                     }
-                }
-                .hidden {
-                    display: none;
                 }
             }
         }

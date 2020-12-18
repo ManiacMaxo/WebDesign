@@ -7,7 +7,12 @@ export const getAll = (req: Request, res: Response, next) => {
         .getRepository(Article)
         .find()
         .then((articles) => {
-            res.render('news', { news: articles })
+            try {
+                return res.render('news', { articles })
+            } catch (e) {
+                console.log(e)
+                return res.redirect('/')
+            }
         })
 }
 
@@ -16,6 +21,6 @@ export const getOne = (req: Request, res: Response, next) => {
         .getRepository(Article)
         .findOne(req.params.id)
         .then((article) => {
-            res.render('article', { content: article })
+            return res.render('article', { article })
         })
 }

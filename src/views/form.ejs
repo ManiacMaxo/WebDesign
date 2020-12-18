@@ -8,14 +8,16 @@
     <body>
         <%- include('static/header') %>
         <main>
-            <form action="" method="post" class="form">
+            <form action="/join" method="post" class="form">
                 <h1>Join BAGUN</h1>
                 <% fields.forEach((input) => { %>
                     <%- include('components/input', { input }) %> 
                 <% }) %>
+                <span class="error message hidden"></span>
                 <button type="submit" class="submit button">Send</button>
             </form>
         </main>
         <%- include('static/footer') %>
     </body>
 </html>
+    

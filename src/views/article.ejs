@@ -2,14 +2,14 @@
 <html lang="en">
     <head>
         <%- include('static/head', {title: 'Welcome | BAGUN Esports'}) %>
-        <link rel="stylesheet" href="/css/team.css" />
+        <link rel="stylesheet" href="/css/article.css" />
     </head>
     <body>
         <%- include('static/header') %>
-        <main class="players">
-            <% players.forEach(player => { %>
-                <%- include('components/card', { player }) %>
-            <% }) %> 
+        <main>
+            <img src="<%= article.thumbnail %>" alt="thumbnail" />
+            <h1><%= article.title %></h1>
+            <p><%= article.body %></p>
         </main>
         <%- include('static/footer') %>
     </body>

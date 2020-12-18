@@ -20,6 +20,12 @@ $mobile-width: 700px;
     background-color: rgba(0, 0, 0, 0.7);
 }
 
+@mixin transform($property) {
+    -moz-transform: $property;
+    -webkit-transform: $property;
+    transform: $property;
+}
+
 @mixin fa-content-regular($content) {
     font-family: 'Font Awesome 5 Free';
     content: $content;

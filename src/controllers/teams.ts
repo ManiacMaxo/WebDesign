@@ -7,7 +7,7 @@ export const getAll = (req: Request, res: Response, next) => {
         .getRepository(Player)
         .find()
         .then((players) => {
-            res.render('team', { title: 'All', players })
+            return res.render('team', { title: 'All', players })
         })
 }
 
@@ -20,12 +20,12 @@ export const getByGame = (req: Request, res: Response, next) => {
         .getMany()
         .then((players) => {
             try {
-                res.render('team', {
+                return res.render('team', {
                     title: players[0].games[0].name,
                     players
                 })
             } catch (err) {
-                res.render('team', {
+                return res.render('team', {
                     title: 'No players found',
                     players: []
                 })
@@ -40,6 +40,6 @@ export const getPlayer = (req: Request, res: Response, next) => {
         .then((player) => {
             console.log('player requested:', player)
             console.log('work needed in `controllers/teams.ts`\n')
-            res.redirect('/teams')
+            return res.redirect('/teams')
         })
 }

@@ -1,4 +1,3 @@
-@import 'static/const';
 @import 'components/input';
 
 .form {
@@ -13,9 +12,15 @@
         text-align: center;
         grid-column: 1 / 4;
         padding: 1rem 0;
+        font-size: 1.5rem;
     }
 
     .submit {
         grid-column: 3;
+    }
+
+    .message {
+        grid-column: 1;
+        text-align: center;
     }
 }

@@ -1,4 +1,4 @@
-@import 'const';
+@import '../const';
 
 .global-footer {
     display: flex;
@@ -11,6 +11,10 @@
     justify-content: space-between;
     span {
         width: fit-content;
+        // &:before {
+        //     @include fa-content-solid('\f1f9');
+        //     font-size: 18px;
+        // }
     }
     div {
         display: flex;

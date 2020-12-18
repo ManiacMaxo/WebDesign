@@ -1,23 +1,15 @@
-const body = document.querySelector('body')
-const form = document.querySelector('form')
-const error = document.querySelector('.error-message')
+const error = document.querySelector('.message')
 
 const urlParams = new URLSearchParams(window.location.search)
-const exists = urlParams.get('exists')
+const err = urlParams.get('err')
 
-if (exists === 'true') {
-    error.innerText = `An application like this already exists`
+switch (err) {
+    case 'exists':
+        error.classList.toggle('hidden')
+        error.innerText = `An application like this already exists`
+        break
+    case 'incorrect':
+        error.classList.toggle('hidden')
+        error.innerText = `Why are you trying to break me`
+        break
 }
-
-form.addEventListener('submit', (event) => {
-    event.preventDefault()
-    const inputs = document.querySelectorAll('form > .input-group > input')
-    inputs.forEach((input) => {
-        console.log(input.value, input.name)
-        // switch (input.name) {
-        //     case 'name':
-        //         if (input.value.length() < 0) {
-        //         }
-        // }
-    })
-})

@@ -8,19 +8,19 @@ export const getLogin = (req: Request, res: Response, next) => {
         {
             name: 'email',
             required: true,
-            type: 'email',
+            type: 'email'
         },
         {
             name: 'password',
             required: true,
-            type: 'password',
-        },
+            type: 'password'
+        }
     ]
 
-    res.render('form', {
+    return res.render('form', {
         action: 'login',
         title: 'login',
-        fields,
+        fields
     })
 }
 
@@ -39,23 +39,23 @@ export const getRegister = (req: Request, res: Response, next) => {
         {
             name: 'email',
             required: true,
-            type: 'email',
+            type: 'email'
         },
         {
             name: 'password',
             required: true,
-            type: 'password',
+            type: 'password'
         },
         {
             name: 'confirm password',
             required: true,
-            type: 'password',
-        },
+            type: 'password'
+        }
     ]
-    res.render('form', {
+    return res.render('form', {
         action: 'register',
         title: 'register',
-        fields,
+        fields
     })
 }
 
