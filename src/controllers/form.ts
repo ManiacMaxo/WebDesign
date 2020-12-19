@@ -31,18 +31,17 @@ export const postJoin = (req: Request, res: Response, next) => {
     application.twitter = req.body.twitter
     application.youtube = req.body.youtube
 
-    try {
-        const repo = getConnection().getRepository(Application)
-        repo.findOne({ where: { email: application.email } }).then((r) => {
-            if (!r) {
-                repo.save(application)
-                res.redirect('/')
-            } else {
-                res.redirect('/join?err=exists')
-            }
-        })
-    } catch (e) {
-        console.log(e)
-        res.status(500)
-    }
+    const repo = getConnection().getRepository(Application)
+    repo.findOne({ where: { email: application.email } }).then((r) => {
+        if (!r) {
+            repo.save(application).catch((e) => {
+                console.log(e)
+                res.redirect('/join?err=unknown')
+            })
+
+            res.redirect('/')
+        } else {
+            res.redirect('/join?err=exists')
+        }
+    })
 }

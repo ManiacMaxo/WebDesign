@@ -9,16 +9,16 @@ export class User {
     @Column({ length: 32 })
     name: string
 
-    @Column()
+    @Column({ unique: true })
     email: string
 
     @Column()
     password: string
 
-    @Column()
+    @Column({ nullable: true })
     picture: string
 
-    @Column()
+    @Column({ nullable: true })
     age: number
 
     @OneToMany(() => Article, (article) => article.author)

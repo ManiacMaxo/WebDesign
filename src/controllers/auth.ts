@@ -17,18 +17,9 @@ export const getLogin = (req: Request, res: Response, next) => {
     })
 }
 
-export const postLogin = (req: Request, res: Response, next) => {
-    const { email, password } = req.body
-    getConnection()
-        .getRepository(User)
-        .findOne({ where: { email } })
-        .then((user) => {
-            bcrypt.compare(password, user.password)
-        })
-}
-
 export const getRegister = (req: Request, res: Response, next) => {
     const fields = [
+        new Input('name', 'text'),
         new Input('email', 'email'),
         new Input('password', 'password'),
         new Input('confirm password', 'password')
@@ -43,8 +34,27 @@ export const getRegister = (req: Request, res: Response, next) => {
 
 export const postRegister = (req: Request, res: Response, next) => {
     const user = new User()
+
     user.name = req.body.name
     user.email = req.body.email
-    user.password = req.body.password
-    getConnection().getRepository(User).save(user)
+
+    console.log(user)
+
+    bcrypt
+        .hash(req.body.password, 10)
+        .then((hash) => {
+            user.password = hash
+            const repo = getConnection().getRepository(User)
+            repo.findOne({ where: { email: user.email } }).then((r) => {
+                if (!r) {
+                    repo.save(user)
+                } else {
+                    res.redirect('/register?err=exists')
+                }
+            })
+        })
+        .catch((e) => {
+            res.redirect('/register')
+        })
+    res.redirect('/login')
 }

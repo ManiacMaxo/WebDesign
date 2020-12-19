@@ -12,4 +12,7 @@ switch (err) {
         error.classList.toggle('hidden')
         error.innerText = `Why are you trying to break me`
         break
+    case 'passport':
+        error.classList.toggle('hidden')
+        break
 }

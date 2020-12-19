@@ -3,6 +3,10 @@
     <head>
         <%- include('static/head', { title }) %>
         <link rel="stylesheet" href="/css/form.css" />
+        <script defer src="/js/form.js"></script>
+        <% if (title === 'Register') { %>
+        <script defer src="/js/pass.js"></script>
+        <% } %>
     </head>
     <body>
         <%- include('static/header') %>
@@ -12,7 +16,9 @@
                 <% fields.forEach((input) => { %>
                     <%- include('components/input', { input }) %> 
                 <% }) %>
-                <span class="error message hidden"></span>  
+                <span class="error message hidden">
+                    <%= messages.error %>
+                </span>
                 <button type="submit" class="submit button"><%= title %></button>
             </form>
         </main>

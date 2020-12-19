@@ -1,3 +1,6 @@
+import dotenv from 'dotenv'
+dotenv.config()
+
 import express from 'express'
 import { Request, Response } from 'express'
 import createHttpError from 'http-errors'
@@ -16,7 +19,6 @@ app.set('view engine', 'ejs')
 // app.use(logger('combined', { stream: accessLogStream }))
 app.use(logger('dev'))
 
-app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 app.use(express.urlencoded({ extended: false }))
@@ -26,11 +28,27 @@ import * as routes from './routes'
 
 app.use(routes.root)
 app.use(routes.form)
-app.use(routes.auth)
 app.use('/create', routes.create)
 app.use('/admin', routes.admin)
 app.use('/news', routes.news)
 app.use('/team', routes.teams)
+
+// authentication middlewares
+import passport from 'passport'
+import flash from 'express-flash'
+import session from 'express-session'
+
+app.use(flash())
+app.use(
+    session({
+        secret: process.env.SESSION_SECRET,
+        resave: false,
+        saveUninitialized: false
+    })
+)
+app.use(passport.initialize())
+app.use(passport.session())
+app.use(routes.auth)
 
 app.use((req: Request, res: Response, next) => {
     next(createHttpError(404))
@@ -44,4 +62,4 @@ app.use((err, req: Request, res: Response, next) => {
     res.render('error')
 })
 
-export default app
+export { app, passport }
