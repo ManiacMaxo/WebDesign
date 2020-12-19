@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('static/head', {title: 'Welcome | BAGUN Esports'}) %>
+        <script defer src="/js/create-article.js" type="module"></script>
+        <link rel="stylesheet" href="/css/create.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css"
+        />
+        <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+    </head>
+    <body>
+        <%- include('static/header') %>
+        <main>
+            <form method="post" enctype="multipart/form-data">
+                <input
+                    class="title"
+                    type="text"
+                    placeholder="Title"
+                    name="title"
+                    required
+                />
+                <input type="file" accept="image/*" name="thumbnail" />
+
+                <div class="editor">
+                    <textarea name="content"></textarea>
+                </div>
+                <button type="submit" class="button">Submit</button>
+            </form>
+        </main>
+        <%- include('static/footer') %>
+    </body>
+</html>

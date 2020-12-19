@@ -29,17 +29,21 @@ ul {
 }
 
 main {
-    margin: $header-height auto 0 auto;
+    margin: calc(#{$header-height} + 1rem) auto 1rem auto;
     padding: 0 $gutter;
-    min-height: calc(100vh - #{$header-height} - #{$footer-height});
+    min-height: calc(100vh - #{$header-height} - #{$footer-height} - 2rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 @media (max-width: $mobile-width) {
     main {
         min-height: calc(
-            100vh - #{$mobile-header-height} - #{$mobile-footer-height}
+            100vh - #{$mobile-header-height} - #{$mobile-footer-height} - 2rem
         );
-        margin-top: $mobile-header-height;
+        margin-top: calc(#{$mobile-header-height} + 1rem);
     }
 }
 
@@ -54,7 +58,9 @@ main {
     transition: all 0.4s ease 0s;
     cursor: pointer;
 
-    &:hover {
+    &:hover,
+    &:active,
+    &:focus {
         color: #ffffff;
         background: $color-gold;
         border-color: $color-gold;
@@ -73,4 +79,10 @@ main {
 
 .hidden {
     display: none !important;
+}
+
+.wrapper {
+    height: 100%;
+    margin: 0 auto;
+    max-width: $max-content-width;
 }

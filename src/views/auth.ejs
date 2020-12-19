@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('static/head', { title }) %>
+        <link rel="stylesheet" href="/css/form.css" />
+    </head>
+    <body>
+        <%- include('static/header') %>
+        <main>
+            <form method="post" class="form">
+                <h1><%= title %></h1>
+                <% fields.forEach((input) => { %>
+                    <%- include('components/input', { input }) %> 
+                <% }) %>
+                <span class="error message hidden"></span>  
+                <button type="submit" class="submit button"><%= title %></button>
+            </form>
+        </main>
+        <%- include('static/footer') %>
+    </body>
+</html>
+    

@@ -2,24 +2,17 @@ import { Request, Response } from 'express'
 import { User } from '../entity'
 import bcrypt from 'bcrypt'
 import { getConnection } from 'typeorm'
+import { Input } from '../utils'
 
 export const getLogin = (req: Request, res: Response, next) => {
     const fields = [
-        {
-            name: 'email',
-            required: true,
-            type: 'email'
-        },
-        {
-            name: 'password',
-            required: true,
-            type: 'password'
-        }
+        new Input('email', 'email'),
+        new Input('password', 'password')
     ]
 
-    return res.render('form', {
+    return res.render('auth', {
         action: 'login',
-        title: 'login',
+        title: 'Login',
         fields
     })
 }
@@ -36,25 +29,14 @@ export const postLogin = (req: Request, res: Response, next) => {
 
 export const getRegister = (req: Request, res: Response, next) => {
     const fields = [
-        {
-            name: 'email',
-            required: true,
-            type: 'email'
-        },
-        {
-            name: 'password',
-            required: true,
-            type: 'password'
-        },
-        {
-            name: 'confirm password',
-            required: true,
-            type: 'password'
-        }
+        new Input('email', 'email'),
+        new Input('password', 'password'),
+        new Input('confirm password', 'password')
     ]
-    return res.render('form', {
+
+    return res.render('auth', {
         action: 'register',
-        title: 'register',
+        title: 'Register',
         fields
     })
 }

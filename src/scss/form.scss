@@ -3,10 +3,15 @@
 .form {
     margin: 0 auto;
     width: 100%;
-    max-width: 500px;
+    max-width: 550px;
     display: grid;
     grid-template-columns: 1fr 5% 1fr;
     grid-template-rows: auto;
+    background-color: #fff;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: 5px;
+
     h1 {
         width: 100%;
         text-align: center;
