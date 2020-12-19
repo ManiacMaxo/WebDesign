@@ -1,6 +1,6 @@
 import { Request, Response } from 'express'
-import { User } from '../entity'
+import { getConnection } from 'typeorm'
 
 export const getTest = (req: Request, res: Response, next) => {
-    return res.render('admin/test')
+    return res.render('index')
 }

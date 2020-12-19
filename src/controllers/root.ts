@@ -1,4 +1,4 @@
-import { Info } from '../entity'
+import { Admin, Info } from '../entity'
 import { Request, Response } from 'express'
 import { getConnection } from 'typeorm'
 
@@ -44,4 +44,28 @@ export const getPrivacy = (req: Request, res: Response, next) => {
 
 export const getShop = (req: Request, res: Response, next) => {
     return res.redirect('/')
+}
+
+export const checkAuth = (req: Request, res: Response, next) => {
+    if (req.isAuthenticated()) {
+        return next()
+    } else {
+        return res.redirect('/login')
+    }
+}
+
+export const checkAdmin = (req: Request, res: Response, next) => {
+    getConnection()
+        .getRepository(Admin)
+        .createQueryBuilder('admin')
+        .leftJoinAndSelect('admin.user', 'user')
+        .where('user.id = :id', { id: req.user })
+        .getCount()
+        .then((result) => {
+            if (result) {
+                next()
+            } else {
+                return res.redirect('/login')
+            }
+        })
 }

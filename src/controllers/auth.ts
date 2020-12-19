@@ -38,14 +38,12 @@ export const postRegister = (req: Request, res: Response, next) => {
     user.name = req.body.name
     user.email = req.body.email
 
-    console.log(user)
-
     bcrypt
         .hash(req.body.password, 10)
         .then((hash) => {
             user.password = hash
             const repo = getConnection().getRepository(User)
-            repo.findOne({ where: { email: user.email } }).then((r) => {
+            repo.findOne({ email: user.email }).then((r) => {
                 if (!r) {
                     repo.save(user)
                 } else {

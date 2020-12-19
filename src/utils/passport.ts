@@ -8,7 +8,7 @@ export const initialize = (passport: passport) => {
     const authenticate = (email: string, password: string, done) => {
         getConnection()
             .getRepository(User)
-            .findOne({ where: { email } })
+            .findOne({ email })
             .then((user) => {
                 if (!user) {
                     return done(null, false, { message: 'User not found' })
@@ -31,6 +31,15 @@ export const initialize = (passport: passport) => {
     }
 
     passport.use(new LocalStrategy({ usernameField: 'email' }, authenticate))
-    passport.serializeUser((user, done) => {})
-    passport.deserializeUser((id, done) => {})
+    passport.serializeUser((user, done) => {
+        done(null, user.id)
+    })
+    passport.deserializeUser((id, done) => {
+        getConnection()
+            .getRepository(User)
+            .findOne(id)
+            .then((user) => {
+                done(null, user)
+            })
+    })
 }

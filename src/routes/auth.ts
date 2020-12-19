@@ -2,9 +2,9 @@ import { Router } from 'express'
 const router = Router()
 import { body } from 'express-validator'
 import { auth } from '../controllers'
+
 import passport from 'passport'
 import { initialize } from '../utils'
-
 initialize(passport)
 
 router.get('/login', auth.getLogin)

@@ -36,7 +36,7 @@ export const getByGame = (req: Request, res: Response, next) => {
 export const getPlayer = (req: Request, res: Response, next) => {
     getConnection()
         .getRepository(Player)
-        .findOne({ where: { slug: req.params.slug } })
+        .findOne({ slug: req.params.slug })
         .then((player) => {
             console.log('player requested:', player)
             console.log('work needed in `controllers/teams.ts`\n')

@@ -32,7 +32,7 @@ export const postJoin = (req: Request, res: Response, next) => {
     application.youtube = req.body.youtube
 
     const repo = getConnection().getRepository(Application)
-    repo.findOne({ where: { email: application.email } }).then((r) => {
+    repo.findOne({ email: application.email }).then((r) => {
         if (!r) {
             repo.save(application).catch((e) => {
                 console.log(e)
