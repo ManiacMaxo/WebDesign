@@ -10,16 +10,6 @@ app.set('port', port)
 const http = require('http')
 const server = http.createServer(app)
 
-// const https = require('https')
-// const fs = require('fs')
-
-// const credentials = {
-//     key: fs.readFileSync('/etc/letsencrypt/live/gorchilov.net/privkey.pem'),
-//     cert: fs.readFileSync('/etc/letsencrypt/live/gorchilov.net/fullchain.pem'),
-// }
-
-// const server = https.createServer(credentials, app)
-
 db.connect().then(() => {
     console.log('connected')
     server.listen(port)
