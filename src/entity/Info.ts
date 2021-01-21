@@ -1,4 +1,11 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm'
+import {
+    Entity,
+    PrimaryGeneratedColumn,
+    Column,
+    OneToOne,
+    JoinColumn
+} from 'typeorm'
+import { Admin } from '.'
 
 @Entity()
 export class Info {
@@ -10,4 +17,8 @@ export class Info {
 
     @Column('text')
     body: string
+
+    @OneToOne(() => Admin)
+    @JoinColumn()
+    admin: Admin
 }

@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 import 'reflect-metadata'
 import { createConnection } from 'typeorm'
 import debug from 'debug'
@@ -7,7 +9,6 @@ const port = process.env.PORT || 3000
 app.set('port', port)
 
 import http from 'http'
-import { Admin } from './entity'
 const server = http.createServer(app)
 
 createConnection()

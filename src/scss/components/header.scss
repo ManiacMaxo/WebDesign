@@ -14,44 +14,49 @@ $card-height: 200px;
     border-bottom: $border-thickness solid $color-black;
     padding: 0 $gutter;
 
+    .translate-100 {
+        @include transform(translateY(-100vh));
+    }
+
     & > .wrapper {
         display: flex;
         justify-content: space-between;
+    }
 
-        .dropdown-menu {
-            position: absolute;
-            background: #ffffff;
-            border-bottom: 1px solid $color-black;
-            left: 0;
-            top: $header-height;
-            height: calc(#{$card-height} + 3rem);
-            width: 100vw;
-            transition: all 0.2s linear;
+    .dropdown-menu {
+        position: absolute;
+        background: #ffffff;
+        border-bottom: 1px solid $color-black;
+        left: 0;
+        top: $header-height;
+        height: calc(#{$card-height} + 3rem);
+        width: 100vw;
+        transition: all 0.2s linear;
+        z-index: -10;
 
-            .wrapper {
+        .wrapper {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            text-transform: none;
+            max-width: calc(4 * (#{$card-width} + 7rem));
+
+            a {
+                font-size: 13px;
                 display: flex;
-                justify-content: space-evenly;
+                flex-direction: column;
                 align-items: center;
-                text-transform: none;
-                max-width: calc(4 * (#{$card-width} + 7rem));
 
-                a {
-                    font-size: 13px;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
+                img {
+                    position: relative;
+                    height: $card-height;
+                    width: $card-width;
+                    filter: grayscale(100%);
+                    transition: all 0.2s linear;
+                    border-radius: 5px;
 
-                    img {
-                        position: relative;
-                        height: $card-height;
-                        width: $card-width;
-                        filter: grayscale(100%);
-                        transition: all 0.2s linear;
-                        border-radius: 5px;
-
-                        &:hover {
-                            filter: none;
-                        }
+                    &:hover {
+                        filter: none;
                     }
                 }
             }
@@ -73,8 +78,22 @@ $card-height: 200px;
             height: 110%;
             @include transform(translateY(0.5rem));
             margin-right: 2rem;
+
             * {
                 height: 100%;
+            }
+        }
+
+        .dropdown span {
+            cursor: pointer;
+            user-select: none;
+
+            .fa-angle-down {
+                transition: all 0.15s linear;
+
+                &.down {
+                    @include transform(rotate(180deg));
+                }
             }
         }
 
@@ -86,23 +105,6 @@ $card-height: 200px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-
-            .dropdown {
-                span {
-                    cursor: pointer;
-                    user-select: none;
-                    .fa-angle-down {
-                        transition: all 0.15s linear;
-                        &.down {
-                            @include transform(rotate(180deg));
-                        }
-                    }
-                }
-
-                .translate-100 {
-                    @include transform(translateY(-100vh));
-                }
-            }
         }
 
         .right {
@@ -115,7 +117,7 @@ $card-height: 200px;
         }
 
         &:last-child() {
-            justify-self: flex-right;
+            justify-self: flex-end;
         }
     }
 }

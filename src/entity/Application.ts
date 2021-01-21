@@ -1,4 +1,11 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm'
+import {
+    Entity,
+    PrimaryGeneratedColumn,
+    Column,
+    OneToOne,
+    JoinColumn
+} from 'typeorm'
+import { User } from '.'
 
 @Entity('applications')
 export class Application {
@@ -22,4 +29,8 @@ export class Application {
 
     @Column({ length: 64 })
     youtube: string
+
+    @OneToOne(() => User)
+    @JoinColumn()
+    user: User
 }

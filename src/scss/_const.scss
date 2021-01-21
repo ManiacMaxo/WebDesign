@@ -21,9 +21,10 @@ $mobile-width: 700px;
 }
 
 @mixin transform($property) {
-    -moz-transform: $property;
-    -webkit-transform: $property;
     transform: $property;
+    -webkit-transform: $property;
+    -moz-transform: $property;
+    -ms-transform: $property;
 }
 
 @mixin fa-content-regular($content) {

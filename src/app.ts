@@ -1,22 +1,27 @@
-import dotenv from 'dotenv'
-dotenv.config()
+require('dotenv').config()
 
 import express from 'express'
 import { Request, Response } from 'express'
 import createHttpError from 'http-errors'
 import logger from 'morgan'
+import { createWriteStream } from 'fs'
 
 const app = express()
 
 app.set('views', __dirname + '/views')
 app.set('view engine', 'ejs')
 
-import { createWriteStream } from 'fs'
-const accessLogStream = createWriteStream(__dirname + '/../logs/access.log', {
-    flags: 'a'
-})
-app.use(logger('combined', { stream: accessLogStream }))
-app.use(logger('dev'))
+if (process.env.NODE_ENV === 'production') {
+    app.use(
+        logger('combined', {
+            stream: createWriteStream(__dirname + '../logs/access.log', {
+                flags: 'a'
+            })
+        })
+    )
+} else {
+    app.use(logger('dev'))
+}
 
 // authentication middlewares
 import passport from 'passport'
