@@ -1,4 +1,10 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm'
+import {
+    Entity,
+    PrimaryGeneratedColumn,
+    Column,
+    ManyToOne,
+    OneToMany
+} from 'typeorm'
 import { User } from '.'
 
 @Entity('articles')
@@ -6,7 +12,7 @@ export class Article {
     @PrimaryGeneratedColumn()
     id: number
 
-    @Column({ nullable: true })
+    @Column()
     thumbnail: string
 
     @Column({ length: 64 })
@@ -14,6 +20,9 @@ export class Article {
 
     @Column('text')
     body: string
+
+    @Column({ default: new Date() })
+    date: Date
 
     @ManyToOne(() => User, (user) => user.articles)
     author: User

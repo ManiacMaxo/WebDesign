@@ -1,5 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, BeforeInsert } from 'typeorm'
-import { Player } from '.'
+import { BeforeInsert, Column, Entity, PrimaryGeneratedColumn } from 'typeorm'
 
 @Entity('games')
 export class Game {

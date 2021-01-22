@@ -1,5 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, OneToOne, JoinColumn } from 'typeorm'
-import { User } from './User'
+import { Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from 'typeorm'
+import { User } from '.'
 
 @Entity('admins')
 export class Admin {

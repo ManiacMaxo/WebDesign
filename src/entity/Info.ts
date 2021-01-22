@@ -1,9 +1,9 @@
 import {
-    Entity,
-    PrimaryGeneratedColumn,
     Column,
+    Entity,
+    JoinColumn,
     OneToOne,
-    JoinColumn
+    PrimaryGeneratedColumn
 } from 'typeorm'
 import { Admin } from '.'
 

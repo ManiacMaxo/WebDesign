@@ -42,7 +42,7 @@ export const postCreateArticle = (req: Request, res: Response, next) => {
         .then((user) => {
             article.author = user
         })
-    article.thumbnail = `/uploads/images/${article.id}`
+    // article.thumbnail = `/uploads/images/${article.id}`
 
     try {
         getConnection().getRepository(Article).save(article)

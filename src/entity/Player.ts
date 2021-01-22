@@ -1,12 +1,12 @@
 import {
-    Entity,
-    PrimaryGeneratedColumn,
+    BeforeInsert,
     Column,
+    Entity,
     JoinTable,
     ManyToMany,
-    BeforeInsert
+    PrimaryGeneratedColumn
 } from 'typeorm'
-import { Game } from './Game'
+import { Game } from '.'
 
 @Entity('players')
 export class Player {
