@@ -1,6 +1,6 @@
-import { Admin, Info } from '../entity'
 import { Request, Response } from 'express'
 import { getConnection } from 'typeorm'
+import { Info, User } from '../entity'
 
 export const getIndex = (req: Request, res: Response, next) => {
     return res.render('index')
@@ -56,13 +56,10 @@ export const checkAuth = (req: Request, res: Response, next) => {
 
 export const checkAdmin = (req: Request, res: Response, next) => {
     getConnection()
-        .getRepository(Admin)
-        .createQueryBuilder('admin')
-        .leftJoinAndSelect('admin.user', 'user')
-        .where('user.id = :id', { id: req.user })
-        .getCount()
-        .then((result) => {
-            if (result) {
+        .getRepository(User)
+        .findOne(req.user)
+        .then((user) => {
+            if (user) {
                 next()
             } else {
                 return res.redirect('/login')

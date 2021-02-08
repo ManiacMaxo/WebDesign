@@ -5,7 +5,7 @@ import {
     OneToOne,
     PrimaryGeneratedColumn
 } from 'typeorm'
-import { Admin } from '.'
+import { User } from '.'
 
 @Entity()
 export class Info {
@@ -18,7 +18,10 @@ export class Info {
     @Column('text')
     body: string
 
-    @OneToOne(() => Admin)
+    @Column({ type: 'timestamp' })
+    timestamp: Date
+
+    @OneToOne(() => User)
     @JoinColumn()
-    admin: Admin
+    admin: User
 }

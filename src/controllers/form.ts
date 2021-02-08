@@ -1,8 +1,8 @@
 import { Request, Response } from 'express'
+import { validationResult } from 'express-validator'
+import { getConnection } from 'typeorm'
 import { Application } from '../entity'
 import { Input } from '../utils'
-import { getConnection } from 'typeorm'
-import { validationResult } from 'express-validator'
 
 export const getJoin = (req: Request, res: Response, next) => {
     const fields = [

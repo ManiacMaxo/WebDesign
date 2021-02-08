@@ -1,7 +1,7 @@
-import { Request, Response } from 'express'
-import { User } from '../entity'
 import bcrypt from 'bcrypt'
+import { Request, Response } from 'express'
 import { getConnection } from 'typeorm'
+import { User } from '../entity'
 import { Input } from '../utils'
 
 export const getLogin = (req: Request, res: Response, next) => {

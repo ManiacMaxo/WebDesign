@@ -21,6 +21,9 @@ export class User {
     @Column({ nullable: true })
     age: number
 
+    @Column({ default: false })
+    admin: boolean
+
     @OneToMany(() => Article, (article) => article.author)
     articles: Article[]
 }

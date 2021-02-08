@@ -1,8 +1,8 @@
-import passport from 'passport-local'
-const LocalStrategy = passport.Strategy
-import { getConnection } from 'typeorm'
 import bcrypt from 'bcrypt'
+import passport from 'passport-local'
+import { getConnection } from 'typeorm'
 import { User } from '../entity'
+const LocalStrategy = passport.Strategy
 
 export const initialize = (passport: passport) => {
     const authenticate = (email: string, password: string, done) => {

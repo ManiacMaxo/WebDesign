@@ -1,6 +1,6 @@
-import { Player } from '../entity'
 import { Request, Response } from 'express'
 import { getConnection } from 'typeorm'
+import { Player } from '../entity'
 
 export const getAll = (req: Request, res: Response, next) => {
     getConnection()

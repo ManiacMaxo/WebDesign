@@ -1,7 +1,7 @@
 {
     "name": "bagun",
     "version": "0.5",
-    "author": "Victor <victor@gorchilov.com>",
+    "author": "Victor Gorchilov <victor@gorchilov.com>",
     "license": "MIT",
     "private": true,
     "devDependencies": {

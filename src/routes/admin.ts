@@ -1,6 +1,6 @@
 import { Router } from 'express'
-const router = Router()
 import { admin } from '../controllers'
+const router = Router()
 
 router.get('/test', admin.getTest)
 

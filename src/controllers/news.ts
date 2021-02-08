@@ -1,7 +1,7 @@
-import { Article, User } from '../entity'
 import { Request, Response } from 'express'
-import { getConnection } from 'typeorm'
 import showdown from 'showdown'
+import { getConnection } from 'typeorm'
+import { Article, User } from '../entity'
 
 export const getAll = (req: Request, res: Response, next) => {
     getConnection()

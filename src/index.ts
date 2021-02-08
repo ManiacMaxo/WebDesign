@@ -1,14 +1,14 @@
 require('dotenv').config()
 
+import debug from 'debug'
+import http from 'http'
 import 'reflect-metadata'
 import { createConnection } from 'typeorm'
-import debug from 'debug'
 import app from './app'
 
 const port = process.env.PORT || 3000
 app.set('port', port)
 
-import http from 'http'
 const server = http.createServer(app)
 
 createConnection()

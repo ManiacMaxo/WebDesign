@@ -1,6 +1,6 @@
 import { Router } from 'express'
-const router = Router()
 import { teams } from '../controllers'
+const router = Router()
 
 router.get('/', teams.getAll)
 
