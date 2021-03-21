@@ -1,7 +1,0 @@
-export { admin } from './admin'
-export { auth } from './auth'
-export { create } from './create'
-export { form } from './form'
-export { news } from './news'
-export { root } from './root'
-export { teams } from './teams'

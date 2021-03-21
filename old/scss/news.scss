@@ -1,0 +1,17 @@
+@import 'components/article';
+
+.articles {
+    max-width: $max-content-width;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & > * {
+        margin-bottom: 1rem;
+    }
+
+    &:last-child() {
+        margin: 0;
+    }
+}

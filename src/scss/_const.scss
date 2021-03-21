@@ -1,8 +1,11 @@
-$color-white: rgb(250, 250, 250);
-$color-light-grey: rgb(229, 229, 229);
-$color-medium-grey: rgb(200, 200, 200);
-$color-black: rgb(0, 0, 0);
-$color-gold: rgb(255, 204, 59);
+$light-color: #fafafa;
+$light-grey-color: #e5e5e5;
+$medium-grey-color: #c8c8c8;
+$dark-color: #000000;
+$gold-color: #ffcc3b;
+
+$primary-color: $dark-color;
+$secondary-color: $gold-color;
 
 $footer-height: 5rem;
 $mobile-footer-height: 7rem;
@@ -17,7 +20,7 @@ $mobile-width: 700px;
 @mixin blurred {
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: #000000b3;
 }
 
 @mixin transform($property) {
@@ -27,29 +30,8 @@ $mobile-width: 700px;
     -ms-transform: $property;
 }
 
-@mixin fa-content-regular($content) {
-    font-family: 'Font Awesome 5 Free';
-    content: $content;
-    display: inline-block;
-    padding-right: 3px;
-    vertical-align: middle;
-    font-weight: 400;
-}
-
-@mixin fa-content-solid($content) {
-    font-family: 'Font Awesome 5 Free';
-    content: $content;
-    display: inline-block;
-    padding-right: 3px;
-    vertical-align: middle;
-    font-weight: 900;
-}
-
-@mixin fa-content-brand($content) {
-    font-family: 'Font Awesome 5 Brands';
-    content: $content;
-    display: inline-block;
-    padding-right: 3px;
-    vertical-align: middle;
-    font-weight: 400;
+.wrapper {
+    height: 100%;
+    margin: 0 auto;
+    max-width: $max-content-width;
 }

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('static/head', {title: 'Welcome | BAGUN Esports'}) %>
+        <link rel="stylesheet" href="/css/article.css" />
+    </head>
+    <body>
+        <%- include('static/header') %>
+        <main>
+            <img src="<%= article.thumbnail %>" alt="thumbnail" />
+            <h1><%= article.title %></h1>
+            <%- article.body %>
+        </main>
+        <%- include('static/footer') %>
+    </body>
+</html>
