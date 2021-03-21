@@ -5,9 +5,9 @@ interface Props {}
 
 const News: React.FC<Props> = () => {
     return (
-        <main className={styles.root}>
+        <div className={styles.root}>
             <h1>News page</h1>
-        </main>
+        </div>
     )
 }
 

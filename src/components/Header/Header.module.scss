@@ -2,14 +2,9 @@
 $border-thickness: 2px;
 
 .root {
-    background: $light-color;
-    top: 0;
-    left: 0;
-    position: fixed;
     height: $header-height;
     z-index: 10;
     width: 100vw;
-    border-bottom: $border-thickness solid $dark-color;
     padding: 0 $gutter;
 
     .translate-100 {
@@ -20,6 +15,10 @@ $border-thickness: 2px;
         display: flex;
         justify-content: space-between;
     }
+}
+
+.active {
+    color: $secondary-color;
 }
 
 .left,
@@ -45,14 +44,8 @@ $border-thickness: 2px;
 
     .dropdown span {
         cursor: pointer;
-        user-select: none;
-
-        .fa-angle-down {
-            transition: all 0.15s linear;
-
-            &.down {
-                @include transform(rotate(180deg));
-            }
+        svg {
+            user-select: none;
         }
     }
 

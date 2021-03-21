@@ -4,14 +4,14 @@ $card-height: 200px;
 
 .root {
     position: absolute;
-    background: #ffffff;
+    background: #fff;
     border-bottom: 1px solid $dark-color;
     left: 0;
     top: $header-height;
     height: calc(#{$card-height} + 3rem);
     width: 100vw;
     transition: all 0.2s linear;
-    z-index: -10;
+    z-index: 5;
 }
 
 .wrapper {
@@ -34,10 +34,13 @@ $card-height: 200px;
             filter: grayscale(100%);
             transition: all 0.2s linear;
             border-radius: 5px;
+        }
 
-            &:hover {
+        &:hover {
+            img {
                 filter: none;
             }
+            color: $dark-color;
         }
     }
 }

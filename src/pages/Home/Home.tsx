@@ -5,9 +5,9 @@ interface Props {}
 
 const Home: React.FC<Props> = () => {
     return (
-        <main className={styles.root}>
+        <div className={styles.root}>
             <h1>Hello World!</h1>
-        </main>
+        </div>
     )
 }
 

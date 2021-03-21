@@ -1,37 +1,57 @@
-import React from 'react'
-import { FaShoppingBag } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
+import { FaAngleDown, FaShoppingBag } from 'react-icons/fa'
+import { Link, NavLink } from 'react-router-dom'
 import { Dropdown } from '../Dropdown'
 import styles from './Header.module.scss'
 
 interface Props {}
 
 const Header: React.FC<Props> = () => {
+    const [dropdown, setDropdown] = useState<boolean>(false)
+    const [transform, setTransform] = useState({})
+
+    const toggleDropdown = () => {
+        setTransform({ transform: 'rotate(180deg)' })
+        setDropdown(!dropdown)
+    }
+
     return (
         <header className={styles.root}>
             <div className={styles.wrapper}>
                 <div className={styles.left}>
-                    <Link to='/' className={styles.logo}>
+                    <NavLink to='/' className={styles.logo}>
                         <img src='/images/cat.svg' alt='logo home' />
-                    </Link>
+                    </NavLink>
                     <ul className={styles.routes}>
                         <li>
-                            <Link to='/news'>news</Link>
+                            <NavLink to='/news' activeClassName={styles.active}>
+                                news
+                            </NavLink>
                         </li>
-                        <li className={styles.dropdown}>
+                        <li
+                            className={styles.dropdown}
+                            onClick={toggleDropdown}
+                        >
                             <span>
-                                teams <i className='fas fa-angle-down'></i>
+                                teams <FaAngleDown style={transform} />
                             </span>
                         </li>
                         <li>
-                            <Link to='/join'>join bagun</Link>
+                            <NavLink to='/join' activeClassName={styles.active}>
+                                join bagun
+                            </NavLink>
                         </li>
                         <li>
-                            <Link to='/about'>about</Link>
+                            <NavLink
+                                to='/about'
+                                activeClassName={styles.active}
+                            >
+                                about
+                            </NavLink>
                         </li>
                     </ul>
                 </div>
-                <Dropdown display={false}>
+                <Dropdown display={dropdown}>
                     <Link to='/team/rainbow-6-siege'>
                         <img src='/images/siege.webp' alt='rainbow 6 siege' />
                         Rainbow 6: Siege
