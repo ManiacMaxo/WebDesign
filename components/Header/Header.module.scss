@@ -1,0 +1,87 @@
+@import '../../styles/const';
+$border-thickness: 2px;
+
+.root {
+    height: $header-height;
+    z-index: 10;
+    width: 100vw;
+    padding: 0 $gutter;
+
+    .rotate {
+        @include transform(rotate(-180deg));
+    }
+
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.active {
+    color: $secondary-color;
+}
+
+.left,
+.right {
+    display: flex;
+    align-items: center;
+    z-index: 5;
+}
+
+.left {
+    width: 100%;
+
+    &:last-child() {
+        justify-self: flex-end;
+    }
+}
+
+.logo {
+    z-index: 11;
+    width: auto;
+    height: 110%;
+    @include transform(translateY(0.5rem));
+    margin-right: 2rem;
+
+    * {
+        height: 100%;
+    }
+}
+
+.dropdown span {
+    cursor: pointer;
+    user-select: none;
+
+    svg {
+        transition: all 0.1s linear;
+        user-select: none;
+    }
+}
+
+.routes {
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 400px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.right {
+    font-size: 1.5rem;
+    justify-content: space-between;
+    width: 3rem;
+    * {
+        margin-left: auto;
+    }
+}
+
+@media (max-width: $mobile-width) {
+    .root {
+        height: $mobile-header-height;
+        .left > .routes {
+            display: none;
+        }
+    }
+}
